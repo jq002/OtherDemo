@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的烟花</title>
+    <style>
+         *{
+                margin: 0;
+                padding: 0;
+            }
+            html,body{
+                width: 100%;
+                height: 100%;
+                
+            }
+            body{
+                position: relative;
+                margin: 0 auto;
+            }
+            canvas{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            #bg{
+                z-index: 5;
+            }
+            #firework{
+                z-index: 8;
+            }
+    </style>
+</head>
+
+<body>
+    <canvas id='bg'></canvas>
+    <canvas id='firework'></canvas>
+    
+</body>
+<script src='myfirework.js'></script>
+
+</html>
