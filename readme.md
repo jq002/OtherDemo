@@ -13,3 +13,5 @@ canvas实现烟花demo
 [烟花效果](https://github.com/NewNewKing/SmallRomance/issues/2);
 
 [文字粒子效果](https://github.com/NewNewKing/SmallRomance/issues/3);
+### parallax
+视差的项目
