@@ -25,7 +25,7 @@ const config = {
     },
     // 阶段一
     dialogueOpt: {
-        interval: 2000,  //两句话的间隔时间
+        interval: 2500,  //两句话的间隔时间
         speed: 100,   //语速
         color1: '#ff00ff',
         font1: '14px Arial',
@@ -34,18 +34,16 @@ const config = {
         color4: '#ffff00',
         color5: '#00ff00',
         color6: '#00ffff',
-        color7: '#fff',
+        color7: '#00bfff',
     },
     // type对应上面的color与font  若没有对应的 则默认为color1或font1
     dialogue: [
-        // { type: 6, txt: '如果24-30岁之间' },
-        // { type: 2, txt: '你无法改变，似乎可以预见' },
-        // { type: 2, txt: '30岁那一年' },
-        // { type: 6, txt: '依然是今天，你24岁所要面对的问题' },
-        // { type: 6, txt: '人生没有追求，无法追求，' },
-        // { type: 2, txt: '挣扎着想要努力，坚持，确一次次放弃' },
-        { type: 6, txt: '不要让赚钱成为思想懒惰的借口' },
-        { type: 2, txt: '不要让上班下班成为生活的全部' },
+        { type: 6, txt: '戊戌年 正月十五' },
+        { type: 2, txt: '元宵节快乐' },
+        { type: 2, txt: '请你看一场不一样的烟火' },
+        { type: 6, txt: '虽然已经零点过去' },
+        { type: 6, txt: '相识即缘分。' },
+        { type: 7, txt: '来自 jiangqin' }
     ],
 }
 class Snowflake {
@@ -240,25 +238,25 @@ const canvas = {
         // this.loopTxt();
         // this.renderFall();
     },
-    initAudio(){
+    initAudio() {
         const audio = new Audio();
-        audio.src ='./audio/1.mp3';
+        audio.src = './audio/sky.mp3';
         audio.loop = true;
         audio.play();
         audio.volume = 0.5;
         const music = document.querySelector('#music');
 
-        document.addEventListener("WeixinJSBridgeReady", function () { 
-            audio.play(); 
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
         }, false);
 
 
-        music.onclick = function(){
-            const cla =  this.getAttribute('class');
-            if(cla == 'on'){
+        music.onclick = function () {
+            const cla = this.getAttribute('class');
+            if (cla == 'on') {
                 this.setAttribute('class', 'off');
                 audio.pause();
-            }else{
+            } else {
                 this.setAttribute('class', 'on');
                 audio.play();
             }
@@ -359,7 +357,7 @@ const canvas = {
         if (this.dialogue.current >= this.dialogue.txt.length && --this.dialogueOpt.interval <= 0) {
             if (config.dialogue.length == 0) {
                 this.txtCtx.clearRect(0, 0, config.width, config.height);
-                this.status='firework';
+                this.status = 'firework';
                 return;
             }
             this.dialogue = config.dialogue.shift();
