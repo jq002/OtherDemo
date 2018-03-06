@@ -1,20 +1,26 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin= require('clean-webpack-plugin');
 module.exports = {
     entry: './src/index.js',
     output: {
         path: __dirname + '/dist',
-        filename: 'index.bundle.js'
+        filename: 'js/[name].js'
+    },
+    devServer:{
+        port:8089,
+        open:true,
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
+                // use: ExtractTextPlugin.extract({
+                //     fallback: 'style-loader',
+                //     use: ['css-loader', 'sass-loader']
+                // })
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -24,6 +30,10 @@ module.exports = {
             filename: 'index.html',
             hash: true
         }),
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin({
+            filename:'css/[name].css',
+            disable:true
+        }),
+        new CleanWebpackPlugin(['dist'])
     ]
 };
