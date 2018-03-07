@@ -18,4 +18,12 @@ cnpm i --save-dev webpack-dev-server
 webpack-dev-server --hot(待研究，分离css插件先关掉)
 ### 开发运行
 npm run dev
-
+### 待研究webpack的运行模式
+####插件file-loader提取图片   html-loader
+cnpm i --save-dev file-loader
+cnpm i --save-dev html-loader
+从html里导出img标签的图片(html-loader)
+###    devtool: 'source-map'
+js出错后可以定位到源文件
+### 'css-loader?sourceMap', 'sass-loader?sourceMap'
+css出错后可以定位到源文件
