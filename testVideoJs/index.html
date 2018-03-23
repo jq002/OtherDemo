@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <style>
+        .bg {
+            width: 900px;
+            height: 400px;
+            background-color: #ddd;
+        }
+
+        .shipin {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Change all text and icon colors in the player. */
+
+        .vjs-matrix.video-js {
+            color: #00ff00;
+        }
+
+        /* Change the border of the big play button. */
+
+        .vjs-matrix .vjs-big-play-button {
+            border-color: #00ff00;
+        }
+
+        /* Change the color of various "bars". */
+
+        .vjs-matrix .vjs-volume-level,
+        .vjs-matrix .vjs-play-progress,
+        .vjs-matrix .vjs-slider-bar {
+            background: #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="shipin">
+            <video id="my-video" class="vjs-matrix video-js vjs-big-play-centered vjs-fluid" controls preload="auto" poster="MY_VIDEO_POSTER.jpg"
+                data-setup="{}">
+                <source src="mov_bbb.mp4" type='video/mp4'>
+                <source src="MY_VIDEO.webm" type='video/webm'>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+    </div>
+
+
+    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+</body>
+
+</html>
