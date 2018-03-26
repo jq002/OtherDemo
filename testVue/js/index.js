@@ -62,3 +62,41 @@ var app6=new Vue({
         parentMsg:''
     }
 });
+//插槽
+Vue.component('anchored-heading', {
+    template: '#anchored-heading-template',
+    props: {
+      level: {
+        type: Number,
+        required: true
+      }
+    }
+  })
+  
+  var app7=new Vue({
+    el:"#app7",
+    data:{
+        items:[{i:1},{i:2},{i:3}]
+    }
+});
+//渲染函数render
+Vue.component('anchored-heading-2', {
+    render: function (createElement) {
+      return createElement(
+        'h' + this.level,   // tag name 标签名称
+        this.$slots.default // 子组件中的阵列
+      )
+    },
+    props: {
+      level: {
+        type: Number,
+        required: true
+      }
+    }
+  });
+  var app8=new Vue({
+    el:"#app8",
+    data:{
+        items:[{i:1},{i:2},{i:3},{i:4},{i:5}]
+    }
+});

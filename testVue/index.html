@@ -54,8 +54,34 @@
     <div id="app6">
         <input v-model='parentMsg'/>
         <child :message='parentMsg'></child>
+        
     </div>
-    
+    <div id="app7">
+            <anchored-heading v-for="item in items" :level="item.i">Hello world!</anchored-heading>
+    </div>
+    <div id="app8">
+            <anchored-heading-2 v-for="item in items" :level="item.i">Hello world!</anchored-heading>
+    </div>
+    <script type="text/x-template" id="anchored-heading-template">
+        <h1 v-if="level === 1">
+          <slot></slot>
+        </h1>
+        <h2 v-else-if="level === 2">
+          <slot></slot>
+        </h2>
+        <h3 v-else-if="level === 3">
+          <slot></slot>
+        </h3>
+        <h4 v-else-if="level === 4">
+          <slot></slot>
+        </h4>
+        <h5 v-else-if="level === 5">
+          <slot></slot>
+        </h5>
+        <h6 v-else-if="level === 6">
+          <slot></slot>
+        </h6>
+      </script>
     <script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
 </body>
