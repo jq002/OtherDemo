@@ -1,5 +1,7 @@
 # OtherDemo
-
+```
+https://github.com/jq002/OtherDemo.git
+```
 **模仿网上各种例子，希望自己每天能坚持写**
 
 ### bubble
