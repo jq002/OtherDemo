@@ -16,8 +16,24 @@ cnpm i --save-dev css-loader styke-loader
 cnpm i --save-dev sass-loader node-sass
 
 #### webpack-dev-server 本地打开服务，开启浏览器
+```
 cnpm i --save-dev webpack-dev-server
+```
 
+The webpack-dev-server provides you with a simple web server and the ability to use live reloading(实时重载). 
+This set of options is picked up by webpack-dev-server and can be used to change its behavior in various ways. 
+```
+devServer: {
+  contentBase: path.join(__dirname, "dist"),
+  compress: true,
+  port: 9000
+}
+```
+If you're using dev-server through the Node.js API, the options in devServer will be ignored. Pass the options as a second parameter instead: 
+```
+new WebpackDevServer(compiler, {...}).
+
+```
 #### clean-webpack-plugin 清除文件
 
 #### 模块热替换（不刷新网页更新修改的内容）
