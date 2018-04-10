@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Title of the document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面优化</title>
+    <style>
+        #a,
+        #b {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        #a {
+            left: 10px;
+            top: 10px;
+            z-index: 2;
+            animation: move 1s linear;
+            background: red;
+        }
+
+        #b {
+            left: 50px;
+            top: 50px;
+            z-index: 1;
+            background: blue;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(70px);
+            }
+        }
+    </style>
 </head>
 
 <body>
-Content of the document......
+    <div id="#a">A</div>
+    <div id="#b">B</div>
 </body>
 
 </html>

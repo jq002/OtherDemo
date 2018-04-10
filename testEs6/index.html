@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>promise</title>
+    <script>
+        function runAsync(){//返回了一个promise对象
+
+            var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('2s,执行完成');
+                resolve("随便什么数据");
+            },2000)
+        });
+        return p;
+        }
+        runAsync().then(function(data){
+            console.log(data);
+        })
+        function runAsync1(){//返回了一个promise对象
+            
+            var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('runAsync1执行完成');
+                resolve("runAsync1数据");
+            },2000)
+        });
+        return p;
+        }
+        function runAsync2(){//返回了一个promise对象
+            
+            var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('runAsync2执行完成');
+                resolve("runAsync2数据");
+            },2000)
+        });
+        return p;
+        }
+        function runAsync3(){//返回了一个promise对象
+            
+            var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('runAsync3执行完成');
+                resolve("runAsync3数据");
+            },2000)
+        });
+        return p;
+        }
+        Promise. all([runAsync1(),runAsync2(),runAsync3()]).then(results=>{
+            console.log(results)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

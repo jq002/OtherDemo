@@ -1,0 +1,7 @@
+node_modules
+
+test.*
+
+.Ds_Store
+dist
+npm-debug.log
