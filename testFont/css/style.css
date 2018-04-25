@@ -1,0 +1,20 @@
+
+@font-face {
+    font-family: 'hanyishoujin';
+    src: url('../fonts/hanyishoujin.TTF');
+    src:
+      url('../fonts/hanyishoujin.eot?#font-spider') format('embedded-opentype'),
+      url('../fonts/hanyishoujin.woff2') format('woff2'),
+      url('../fonts/hanyishoujin.woff') format('woff'),
+      url('../fonts/hanyishoujin.ttf') format('truetype'),
+      url('../fonts/hanyishoujin.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body{
+      font-family: 'hanyishoujin';
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+  }
