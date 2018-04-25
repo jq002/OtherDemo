@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform属性</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 20px auto;
+        }
+
+        .square {
+            height: 100%;
+            background-color: turquoise;
+        }
+
+        .x {
+            transform: rotateX(45deg);
+        }
+
+        .y {
+            transform: rotateY(45deg);
+        }
+
+        .z {
+            transform: rotateZ(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"><div class="square">normal</div></div>
+    <div class="container"><div class="square x">rotateX(45deg)</div></div>
+    <div class="container"><div class="square y">rotateY(45deg)</div></div>
+    <div class="container"><div class="square z">rotateZ(45deg)</div></div>
+
+</body>
+
+</html>

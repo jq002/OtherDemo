@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 卡片翻转效果</title>
+    <style>
+        .flip-container{
+            /* 在需要3维变换的元素的父元素上设置 */
+            perspective: 1000;
+        }
+        .flip-container:hover .flipper{
+            transform: rotateY(180deg);
+
+        }
+        .flip-container,.front,.back{
+            width: 320px;
+            height: 480px;
+        }
+        .flipper{
+            transition: 5s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .front,.back{
+            /* 背面不可见 */
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .front{
+            /* 设置谁是正面 */
+            z-index: 2;
+            background-color: rgba(255,0, 0, 0.5);
+        }
+        .back{
+            /* 初始化旋转180，否则两张（正反正反）叠在一起的扑克牌，旋转也无法看到两张牌面 */
+            transform: rotateY(180deg);
+            background-color: rgba(0,0, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front">
+                前面内容
+            </div>
+            <div class="back">
+                背面内容
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

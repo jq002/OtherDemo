@@ -9,6 +9,9 @@ css3实现背景冒泡
 
 ### canvas
 学习canvas教程例子
+### cardFilp
+css3 实现卡片翻转效果
+[翻转效果](http://www.webhek.com/post/css-flip.html)
 ### clock
 canvas实现时钟效果
 ### firework
