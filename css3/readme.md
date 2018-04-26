@@ -2,7 +2,25 @@
 
 ### transform
 ```
-transform: rotateX(45deg);//一个平行于z轴的平面，绕x轴旋转，从y轴方向投影：宽度不变，高度变小
-transform: rotateY(45deg);//一个平行于z轴的平面，绕y轴旋转，从y轴方向投影：高度不变，宽度变小
-transform: rotateY(45deg);//一个平行于z轴的平面，绕z轴旋转，从y轴方向投影：高度不变，宽度不变，旋转45
+transform: rotateX(45deg);//一个垂直于z轴的平面，绕x轴旋转，从z轴方向投影到xy平面：宽度不变，高度变小
+transform: rotateY(45deg);//一个垂直于z轴的平面，绕y轴旋转，从z轴方向投影：高度不变，宽度变小
+transform: rotateY(45deg);//一个垂直于z轴的平面，绕z轴旋转，从z轴方向投影：高度不变，宽度不变，旋转45
+```
+
+### 骰子
+将3、4平面放在左右的方法
+```
+//错误
+transform:  rotateY(90deg)  translateX(50px);//translateX是在平面上的位移；
+//应该使用一下方法，将平面放在左右
+transform: rotateY(90deg) translateZ(50px);
+
+```
+```
+perspective: 100px;//相当于离得很近观察，靠近观察
+```
+
+### box-shadow
+```
+box-shadow: inset(内阴影) 0（阴影水平偏移） 0（垂直偏移） 15px（阴影模糊值）第四个（外延值） rgba(0, 0, 0, .2)（颜色）;
 ```

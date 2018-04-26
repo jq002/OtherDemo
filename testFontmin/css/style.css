@@ -1,0 +1,18 @@
+
+@font-face {
+  font-family: 'PINGFANGREGULAR';
+  src: url('../fonts/PINGFANGREGULAR.TTF');
+  src:
+    url('../fonts/PINGFANGREGULAR.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/PINGFANGREGULAR.woff2') format('woff2'),
+    url('../fonts/PINGFANGREGULAR.woff') format('woff'),
+    url('../fonts/PINGFANGREGULAR.ttf') format('truetype'),
+    url('../fonts/PINGFANGREGULAR.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+  body{
+      font-family: "PINGFANGREGULAR";
+      text-align: center;
+      font-size: 20px;
+  }
