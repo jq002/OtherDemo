@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>各个浏览器的窗口等的大小</title>
+    <style>
+        /* html{
+            margin: 10px;
+        } */
+
+        .content {
+            width: 400px;
+            height: 700px;
+            background-color: antiquewhite
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"> .content { width: 400px; height: 700px; background-color: antiquewhite } </div>
+
+
+</body>
+<script src="./vconsole.min.js"></script>
+<script>
+    // 初始化
+    var vConsole = new VConsole();
+    console.log('Hello world');
+</script>
+<script>
+    function getInfo() {
+        var s = "";
+        s = " 网页body宽：document.body.clientWidth" +
+            document.body.clientWidth;
+        console.log(s);
+        s = " 网页body高：document.body.clientHeight" +
+            document.body.clientHeight;
+        console.log(s);
+
+        s = " 可展示网页区域宽：document.documentElement.clientWidth" +
+            document.documentElement.clientWidth;
+        console.log(s);
+        s = " 可展示网页区域高：document.documentElement.clientHeight " +
+            document.documentElement.clientHeight;
+        console.log(s);
+
+        s = " 网页正文全文宽： document.body.scrollWidth" +
+            document.body.scrollWidth;
+        console.log(s);
+        s = " 网页正文全文高：" +
+            document.body.scrollHeight;
+        console.log(s);
+
+        s = " 可展示网页区域高：window.innerHeight" +
+            window.innerHeight;
+        console.log(s);
+        s = " 可展示网页区域宽：window.innerWidth" +
+            window.innerWidth;
+        console.log(s);
+
+        s = " 屏幕分辨率的高：window.screen.height" +
+            window.screen.height;
+        console.log(s);
+        s = " 屏幕分辨率的宽：" +
+            window.screen.width;
+        console.log(s);
+        s = " 屏幕可用工作区高度： window.screen.availHeight" +
+            window.screen.availHeight;
+        console.log(s);
+        s = " 屏幕可用工作区宽度：" +
+            window.screen.availWidth;
+        console.log(s);
+        s = " 你的屏幕设置是 " +
+            window.screen.colorDepth + " 位彩色";
+        console.log(s);
+        s = " 你的屏幕设置 " +
+            window.screen.deviceXDPI + " 像素/英寸";
+        console.log(s);
+    }
+    getInfo();
+    // window.addEventListener('scroll',getInfo,false)
+</script>
+
+</html>
