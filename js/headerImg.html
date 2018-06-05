@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟原生顶部下拉图片放大效果</title>
+    <style>
+        .wrapper{
+            height: 1500px;
+        }
+        .header-img {
+            display: block;
+            height: 190px;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper" style="">
+        <img class="header-img" src="http://news.cs.gwchina.cn/file/article/tag_image/20180509/1525853277.0524.png">
+    </div>
+
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        //头图的下拉效果
+        var startY, clientY, imgHeight = $(".header-img").height();
+        //开始下拉的位置
+        $(".wrapper").on('touchstart', function (event) {
+            console.log(event)
+            if (getImgTop() > 100 || getImgTop() < 0) { //html页面嵌入微信，会整个页面下拉，导致img相对于浏览器视窗的高度不为0
+                return;
+            }
+            var touch = event.originalEvent.touches[0];
+            startY = touch.pageY;
+            clientY = touch.clientY;
+        });
+        $(".wrapper").on('touchmove', function (event) {
+            if (getImgTop() > 100 || getImgTop() < 0) {
+                return;
+            }
+            var touch = event.originalEvent.touches[0];
+            //向上滚动,直接返回
+            if (touch.pageY - startY <= 0) {
+                return;
+            }
+            $(".header-img").height(imgHeight + touch.pageY - startY);
+
+        });
+        //下拉结束，恢复原样
+        $(".wrapper").on('touchend', function (event) {
+            $(".header-img").height(imgHeight)
+        });
+    });
+    //获得img相对于浏览器视窗的高度
+    function getImgTop() {
+        var ele = document.querySelector('.header-img');
+        return ele.getBoundingClientRect().top;
+    }
+    
+</script>
+
+</html>
