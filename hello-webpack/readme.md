@@ -16,6 +16,13 @@ cnpm i --save-dev css-loader styke-loader
 cnpm i --save-dev sass-loader node-sass
 
 #### webpack-dev-server 本地打开服务，开启浏览器
+DevServer 会启动一个 HTTP 服务器用于服务网页请求，同时会帮助启动 Webpack ，并接收 Webpack 发出的文件更变信号，通过 WebSocket 协议自动刷新网页做到实时预览。
+
+
+用浏览器打开这个地址你会发现页面空白错误原因是 ./dist/bundle.js 加载404了。 同时你会发现并没有文件输出到 dist 目录，原因是 DevServer 会把 Webpack 构建出的文件保存在内存中，在要访问输出的文件时，必须通过 HTTP 服务访问。 由于 DevServer 不会理会 webpack.config.js 里配置的 output.path 属性，所以要获取 bundle.js 的正确 URL 是 http://localhost:8080/bundle.js.
+
+
+index.html 文件是脱离了 JavaScript 模块化系统的，所以 Webpack 不知道它的存在。
 ```
 cnpm i --save-dev webpack-dev-server
 ```
@@ -54,3 +61,4 @@ js出错后可以定位到源文件
 
 ### 'css-loader?sourceMap', 'sass-loader?sourceMap'
 css出错后可以定位到源文件
+
