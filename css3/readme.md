@@ -24,3 +24,18 @@ perspective: 100px;//相当于离得很近观察，靠近观察
 ```
 box-shadow: inset(内阴影) 0（阴影水平偏移） 0（垂直偏移） 15px（阴影模糊值）第四个（外延值） rgba(0, 0, 0, .2)（颜色）;
 ```
+
+### rem
+- 默认的浏览器字体大小16px；
+- google要求最小字体12px;所以设置为625%，100px
+```
+html{
+    font-size:62.5%;//0.625*16=10;(在google，会变成12px)
+}
+```
+
+### vertical-align
+middle:指的是中线往上1/2 x-height;就是x的交叉点
+
+### ex
+相对单位，指的是小写字母x的高度，x-height

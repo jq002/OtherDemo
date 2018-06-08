@@ -12,7 +12,7 @@
         } */
 
         .content {
-            width: 400px;
+            /* width: 400px; */
             height: 700px;
             background-color: antiquewhite
         }
@@ -50,7 +50,7 @@
         s = " 网页正文全文宽： document.body.scrollWidth" +
             document.body.scrollWidth;
         console.log(s);
-        s = " 网页正文全文高：" +
+        s = " 网页正文全文高：document.body.scrollHeight" +
             document.body.scrollHeight;
         console.log(s);
 
@@ -60,17 +60,26 @@
         s = " 可展示网页区域宽：window.innerWidth" +
             window.innerWidth;
         console.log(s);
-
-        s = " 屏幕分辨率的高：window.screen.height" +
+        s = " 屏幕分辨率(逻辑)的宽：window.screen.width " +
+            window.screen.width;
+        console.log(s);
+        s = " 屏幕分辨率(逻辑)的高：window.screen.height " +
             window.screen.height;
         console.log(s);
-        s = " 屏幕分辨率的宽：" +
-            window.screen.width;
+
+        s = " window.devicePixelRatio "+
+         window.devicePixelRatio;
+        console.log(s);
+        s = " 屏幕分辨率(物理)的宽：window.screen.width * window.devicePixelRatio " +
+        window.screen.width * window.devicePixelRatio;
+        console.log(s);
+        s = " 屏幕分辨率(物理)的高：window.screen.height * window.devicePixelRatio " +
+        window.screen.height * window.devicePixelRatio;
         console.log(s);
         s = " 屏幕可用工作区高度： window.screen.availHeight" +
             window.screen.availHeight;
         console.log(s);
-        s = " 屏幕可用工作区宽度：" +
+        s = " 屏幕可用工作区宽度： window.screen.availWidth " +
             window.screen.availWidth;
         console.log(s);
         s = " 你的屏幕设置是 " +

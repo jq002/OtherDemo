@@ -7,9 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>模拟原生顶部下拉图片放大效果</title>
     <style>
-        .wrapper{
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
             height: 1500px;
         }
+
         .header-img {
             display: block;
             height: 190px;
@@ -21,11 +28,20 @@
 
 <body>
     <div class="wrapper" style="">
-        <img class="header-img" src="http://news.cs.gwchina.cn/file/article/tag_image/20180509/1525853277.0524.png">
+        <img class="header-img" id="id" src="http://news.cs.gwchina.cn/file/article/tag_image/20180509/1525853277.0524.png">
+        <div class="article-content">新华社银川5月12日电（记者杨稳玺）记者近日从宁夏教育厅了解到，为全面加强师德师风建设，宁夏将把师德考核摆在教师考核首位，将师德考核结果纳入教师个人师德档案、教师绩效考核、事业单位工作人员年度考核和诚信体系记载当中，并作为教师资格定期注册、职称评聘和评先评优的重要依据，实行师德问题“一票否决”。</div>
+
     </div>
 
 </body>
 <script src="./jquery.min.js"></script>
+<!-- <script src="js/tween.js"></script> -->
+<script src="./vconsole.min.js"></script>
+<script>
+    // 初始化
+    var vConsole = new VConsole();
+    console.log('Hello world');
+</script>
 <script>
     $(document).ready(function () {
 
@@ -33,8 +49,8 @@
         var startY, clientY, imgHeight = $(".header-img").height();
         //开始下拉的位置
         $(".wrapper").on('touchstart', function (event) {
-            console.log(event)
-            if (getImgTop() > 100 || getImgTop() < 0) { //html页面嵌入微信，会整个页面下拉，导致img相对于浏览器视窗的高度不为0
+            // console.log(event)
+            if (getImgTop() < 0) { //html页面嵌入微信，会整个页面下拉，导致img相对于浏览器视窗的高度不为0
                 return;
             }
             var touch = event.originalEvent.touches[0];
@@ -42,28 +58,71 @@
             clientY = touch.clientY;
         });
         $(".wrapper").on('touchmove', function (event) {
-            if (getImgTop() > 100 || getImgTop() < 0) {
+            event.preventDefault();
+            if (getImgTop() < 0) {
                 return;
             }
             var touch = event.originalEvent.touches[0];
             //向上滚动,直接返回
             if (touch.pageY - startY <= 0) {
                 return;
+            } else if (touch.pageY - startY > 100) {
+                return;
+            } else {
+                requestAnimationFrame(function () {
+                    console.log('animation----')
+                    $(".header-img").css({
+                        "transition": "none"
+                    })
+                    var y=touch.pageY - startY;
+                    $(".header-img").height(imgHeight +touch.pageY - startY);
+                })
+                console.log('flag----')
             }
-            $(".header-img").height(imgHeight + touch.pageY - startY);
 
         });
         //下拉结束，恢复原样
         $(".wrapper").on('touchend', function (event) {
-            $(".header-img").height(imgHeight)
+            requestAnimationFrame(function () {
+                $(".header-img").css({
+                    "transition": "1s"
+                })
+                $(".header-img").height(imgHeight)
+            })
         });
+
     });
     //获得img相对于浏览器视窗的高度
     function getImgTop() {
         var ele = document.querySelector('.header-img');
         return ele.getBoundingClientRect().top;
     }
-    
+    // (function () {
+    //     var lastTime = 0;
+    //     var vendors = ['webkit', 'moz'];
+    //     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    //         window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    //         window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || // name has changed in Webkit
+    //             window[vendors[x] + 'CancelRequestAnimationFrame'];
+    //     }
+
+    //     if (!window.requestAnimationFrame) {
+    //         window.requestAnimationFrame = function (callback, element) {
+    //             var currTime = new Date().getTime();
+    //             var timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
+    //             var id = window.setTimeout(function () {
+    //                 callback(currTime + timeToCall);
+    //             }, timeToCall);
+    //             lastTime = currTime + timeToCall;
+    //             return id;
+    //         };
+    //     }
+    //     if (!window.cancelAnimationFrame) {
+    //         window.cancelAnimationFrame = function (id) {
+    //             clearTimeout(id);
+    //         };
+    //     }
+    // }());
 </script>
 
 </html>
