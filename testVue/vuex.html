@@ -9,6 +9,8 @@
             <script src="https://unpkg.com/vue/dist/vue.js"></script>
             <script src="https://unpkg.com/vuex"></script>
             <div id="app">
+              <input type="text" id="username" value="username">
+              <button @click='clickUser'>button</button>
               <p>{{count}}
                 <button @click="inc">+</button>
                 <button @click="dec">-</button>
@@ -28,6 +30,9 @@
             
             const app = new Vue({
               el: '#app',
+              data:{
+                username:'jq'
+              },
               computed: {
                 count () {
                     return store.state.count
@@ -43,7 +48,10 @@
               // }
               // computed:mapState(['count']),
               methods:
-                mapMutations(['inc','dec'])
+                mapMutations(['inc','dec']),
+                clickUser(){
+                  console.log(this.username);
+                }
               
             })
             </script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>替换元素</title>
+    <style>
+        input[type='checkbox'] {
+            background-color: aquamarine;
+        }
+
+        .box1 {
+            /* vertical-align: baseline; 默认值*/
+        }
+        .box3 img{
+            display: block;
+            outline: 1px solid;
+        }
+        .box4 img{
+            visibility: hidden;
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+        .box4 img[src]{
+            visibility: visible;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 替换元素：img/iframe/video/select/input/button/textarea(修改属性值就可以替换曾现内容) -->
+    
+    <div>
+        <!-- 替换元素的内容的外观不受css影响 -->
+        <input type="checkbox" name="cb1" id="">
+    </div>
+    <div>
+        <!-- 很多替换元素没有明确定义尺寸，有自己的默认值 -->
+        <video src=""></video>
+    </div>
+
+    <!-- 再很多css属性上有一套自己的规则 -->
+    <div class="box1"> baseline基线：被定义为字符x的下边缘；替换元素就是：元素的下边缘；
+        <img src="./img.png" alt="" srcset="">xxxxxxx</div>
+        <!-- 在火狐上display不一样 -->
+    <div class="box2">
+        <input type="button" value="按钮">
+        <button>按钮</button>
+    </div>
+    <div>
+        <!-- 固有尺寸：img图片本来的宽高等 -->
+        <!-- HTML尺寸：通过html原生属性改变 -->
+        <img src="./img.png" alt="" width="300" height="100">
+        <input type="file" name="" size="30" id="">
+        <textarea name="" id="" cols="20" rows="5"></textarea>
+        <!-- css尺寸：通过css的width/height属性改变content box的宽高 -->
+    </div>
+    <!-- 设置display:block;尺寸规则还是和内联状态一致 -->
+    
+    <!-- 例外 -->
+    <div class="box3">
+        <img alt="haha">
+    </div>
+    <div class="box4">
+        <img >
+        <img >
+        <img >
+        <img >
+    </div>
+
+    
+</body>
+
+</html>
