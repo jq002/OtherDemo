@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <div class="content"> .content { width: 400px; height: 700px; background-color: antiquewhite } </div>
-
+    <div class="content" id="top"> .content { width: 400px; height: 700px; background-color: antiquewhite } </div>
+     <div id="tag">11</div>
 
 </body>
 <script src="./vconsole.min.js"></script>
@@ -88,9 +88,29 @@
         s = " 你的屏幕设置 " +
             window.screen.deviceXDPI + " 像素/英寸";
         console.log(s);
+        s = " 屏幕可用工作区宽度： getBoundingClientRect " +
+            window.document.documentElement.getBoundingClientRect().width;
+        console.log(s);
+        s = " tag--: getBoundingClientRect " +
+            document.getElementById('tag').getBoundingClientRect().top;
+        console.log(s);
+        s = " tag--:offsetHeight " +
+            document.getElementById('tag').offsetHeight;
+        console.log(s);
+        s = " top--:offsetHeight " +
+            document.getElementById('top').offsetHeight;
+        console.log(s);
     }
     getInfo();
-    // window.addEventListener('scroll',getInfo,false)
+   function getTop(){
+    var s = " top--: getBoundingClientRect " +
+            document.getElementById('top').getBoundingClientRect().top;
+        console.log(s);
+        var s = " tag--: getBoundingClientRect " +
+            document.getElementById('tag').getBoundingClientRect().top;
+        console.log(s);
+    }
+    window.addEventListener('scroll',getTop,false)
 </script>
 
 </html>

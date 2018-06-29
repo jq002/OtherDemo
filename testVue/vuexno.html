@@ -49,36 +49,48 @@
   </script>
   <script>
     // window.onload = function () {
-    function test() {
-      //构造input\click事件
-      var ev = new Event('input', { bubbles: true });
-      var btnClick = new Event('click', { bubbles: true });
-      document.getElementsByClassName('username')[0].value = '赵而';
-      document.getElementsByClassName('tel')[1].value = '13074826754';
-      //js触发input事件
-      document.getElementsByClassName('username')[0].dispatchEvent(btnClick);
-      document.getElementsByClassName('username')[0].dispatchEvent(ev);
-      document.getElementsByClassName('tel')[1].dispatchEvent(ev);
-      document.getElementsByClassName('tel')[1].dispatchEvent(btnClick);
+    //构造input\click\change事件
+    var ev = new Event('input', { bubbles: true });
+    var btnClick = new Event('click', { bubbles: true });
+    var change=new Event('change', { bubbles: true });
 
-      //js触发click事件
-      document.getElementsByClassName('zm-btn')[0].dispatchEvent(btnClick);
+    function set_select_checked(selectClass, checkValue) {
+      var select = document.getElementsByClassName(selectClass)[0];
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value == checkValue) {
+          select.options[i].selected = true;
+          break;
+        }
+      }
+      select.dispatchEvent(ev);
+      select.dispatchEvent(change);
+      select.dispatchEvent(btnClick);
     }
+    set_select_checked('grade', '高三');
+    set_select_checked('subject', '英语');
+    document.getElementsByClassName('username')[0].value = '赵而三';
+    document.getElementsByClassName('tel')[1].value = '13073826754';
+
+    //js触发input事件
+    document.getElementsByClassName('username')[0].dispatchEvent(ev);
+    document.getElementsByClassName('tel')[1].dispatchEvent(ev);
+    document.getElementsByClassName('username')[0].dispatchEvent(btnClick);
+    document.getElementsByClassName('tel')[1].dispatchEvent(btnClick);
+    // js触发click事件
+    document.getElementsByClassName('zm-btn')[0].dispatchEvent(btnClick);
 
 
-    // if (t1.__defineSetter__) {
-    //   t1.__defineSetter__('value', function (v) {
-    //     this.setAttribute('value', v);//注意这里，要使用setAttribute来设置value值，不能this.value=v，要不会死循环。如果注释掉这句，无法修改input的value值
-    //     // f.call(this);
-    //   });
-    // } else {
-    //   t1.onpropertychange = f;
-    // }
-    // setTimeout(function () { t1.value = "yxl"; }, 2000);//2s后设置值
-    // }
-    function f() {
-      alert('change')
-    }
+    // $.ajax({
+    //   url: "http://dispense.gwchina.cn/ecotope/user/getExtend",
+    //   type: "post",
+    //   data: {
+    //     extend_id: 1
+    //   },
+    //   success: function (data) {},
+    //   error: function (e) {}
+    // });
+
+
   </script>
 </body>
 
