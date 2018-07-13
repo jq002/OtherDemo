@@ -66,8 +66,16 @@
       select.dispatchEvent(change);
       select.dispatchEvent(btnClick);
     }
-    set_select_checked('grade', '高三');
-    set_select_checked('subject', '英语');
+    set_select_checked('grade', '高一');
+    function set_subject_select_checked(selectClass) {
+      var select = document.getElementsByClassName(selectClass)[0];
+      var j=Math.floor(Math.random()*select.options.length);
+      select.options[j].selected = true;
+      select.dispatchEvent(ev);
+      select.dispatchEvent(change);
+      select.dispatchEvent(btnClick);
+    }
+    set_subject_select_checked('subject');
     document.getElementsByClassName('username')[0].value = '赵而三';
     document.getElementsByClassName('tel')[1].value = '13073826754';
 
@@ -77,7 +85,7 @@
     document.getElementsByClassName('username')[0].dispatchEvent(btnClick);
     document.getElementsByClassName('tel')[1].dispatchEvent(btnClick);
     // js触发click事件
-    document.getElementsByClassName('zm-btn')[0].dispatchEvent(btnClick);
+    // document.getElementsByClassName('zm-btn')[0].dispatchEvent(btnClick);
 
 
     // $.ajax({
