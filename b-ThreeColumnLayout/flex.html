@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <style>
-	.container {
-            display: flex;
-	}
-	.main {
-            flex-grow: 1;
-	    height: 300px;
-	    background-color: red;
-	}
-	.left {
-	    order: -1;
-	    flex: 0 1 200px;
-	    margin-right: 20px;
-	    height: 300px;
-	    background-color: blue;
-	}
-	.right {
-	    flex: 0 1 100px;
-            margin-left: 20px;
-	    height: 300px;
-	    background-color: green;
-	}
-    </style>
+	<style>
+		.container {
+			display: flex;
+		}
+
+		.main {
+			flex-grow: 1;
+			background-color: red;
+		}
+
+		.left {
+			order: -1;
+			flex: 0 1 200px;
+			margin-right: 20px;
+			background-color: blue;
+		}
+
+		.right {
+			flex: 0 1 100px;
+			margin-left: 20px;
+			background-color: green;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-	<div class="main"></div>
-	<div class="left"></div>
-	<div class="right"></div>
-    </div>
+	<div class="container">
+		<div class="main">main</div>
+		<div class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam adipisci fuga quos ab rem consectetur mollitia voluptatum expedita aliquam, alias cumque quidem omnis sapiente velit nostrum asperiores corporis, cupiditate temporibus minima, voluptas nobis! Consequatur tempora, non facere eos temporibus ipsa ea praesentium saepe deserunt adipisci! In cupiditate adipisci quasi!</div>
+		<div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit autem dicta ducimus illo sequi! Ullam esse quia reiciendis? Adipisci, qui!</div>
+	</div>
 </body>
+
 </html>

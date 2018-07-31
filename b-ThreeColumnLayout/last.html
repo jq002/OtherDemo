@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <title>圣杯布局</title>
 <head>
+    <title>圣杯布局</title>
     <style>
-        .container {
-	    display: table;
+	.container {
+	    margin-left: 120px;
+	    margin-right: 220px;
+	}
+	.main {
+	    float: left;
 	    width: 100%;
-        }
-        .left, .main, .right {
-	    display: table-cell;
-        }
-        .left {
-	    width: 200px;
-	    height: 300px;
 	    background-color: red;
-        }
-        .main {
-	    background-color: blue;
-        }
-        .right {
+	}
+	.left {
+	    float: left;
 	    width: 100px;
-	    height: 300px;
+	    margin-left: -100%;
+	    position: relative;
+	    left: -120px;
+	    background-color: blue;
+	}
+	.right {
+	    float: left;
+	    width: 200px;
+	    margin-left: -200px;
+	    position: relative;
+	    right: -220px;
 	    background-color: green;
-        }
+	}
     </style>
 </head>
 <body>
     <div class="container">
-	<div class="left"></div>
-	<div class="main"></div>
-	<div class="right"></div>
+	<div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, expedita possimus?</div>
+	<div class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde dicta porro libero! Ipsum beatae voluptatibus doloribus labore amet eligendi accusamus quibusdam asperiores adipisci, a eveniet accusantium provident cum ut! Ea voluptate, quis error et saepe minima quam optio debitis dolores repudiandae illo perferendis explicabo, unde aspernatur nostrum aperiam itaque!</div>
+	<div class="right">咯热门
+
+    </div>
     </div>
 </body>
 </html>
