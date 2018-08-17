@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vertically centering a block of content inside its parent</title>
+    <style>
+        /* html,
+        body {
+            height: 100%;
+        }
+
+        .parent {
+            height: 100%;
+            background-color: #aaaaaa;
+        } */
+
+        .sticky {
+            height: 40px;
+            background-color: red;
+            position: sticky;
+            top:calc(100% - 40px);
+        }
+        p{
+            height: 400px;
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="parent">
+        <p>how to vertically centering </p>
+    </div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="sticky">sticky</div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+</html>
