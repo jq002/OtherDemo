@@ -1,16 +1,43 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<HEAD>
-<TITLE>Anonymous text interrupted by a block</TITLE>
-<style>
 
-    p    { display: inline }
-span { display: block }
-</style>
+<HEAD>
+    <TITLE>Anonymous text interrupted by a block</TITLE>
+    <style>
+        p {
+            display: inline;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        span {
+            display: block;
+        }
+
+        a {
+            border: 1px solid;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 10px;
+            padding: 5px;
+            outline: 4px dotted #e73;
+            outline-offset: 4px;
+        }
+
+        /* a:focus {
+            outline: 4px dotted #e73;
+            outline-offset: 4px;
+            background: #ffa;
+        } */
+    </style>
 </HEAD>
+
 <BODY>
-<P>
-This is anonymous text before the SPAN.
-<SPAN>This is the content of SPAN.</SPAN>
-This is anonymous text after the SPAN.
-</P>
+    <P>
+        This is anonymous text before the SPAN.
+        <br/>
+        <SPAN>This is the content of SPAN.</SPAN>
+        <br/> This is anonymous text after the SPAN.
+    </P>
+    <a href="#">This link has a special focus style.</a>
+    <textarea>Type some text here.</textarea>
 </BODY>
