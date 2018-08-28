@@ -24,12 +24,38 @@
      <div id="tag">11</div>
 
 </body>
-<script src="./vconsole.min.js"></script>
+<h2 onclick="showEruda()">——规则详情——</h2>
+
+
+<script>
+var count = 0;
+function showEruda () {
+    if (count >= 10) {    
+        var erdua = sessionStorage.getItem('erdua');
+        if (!erdua || erdua === 'false'){
+            sessionStorage.setItem('eruda', 'true')
+        } else {
+            sessionStorage.setItem('eruda', 'false')
+        }
+        location.reload()
+    }
+    count++
+}
+</script>
+<script>
+;(function () {
+    if (sessionStorage.getItem('eruda') !== 'true') return;
+    var src = '//cdn.bootcss.com/eruda/1.2.4/eruda.min.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+})();
+</script>
+<!-- <script src="./vconsole.min.js"></script>
 <script>
     // 初始化
     var vConsole = new VConsole();
     console.log('Hello world');
-</script>
+</script> -->
 <script>
     function getInfo() {
         var s = "";
@@ -110,7 +136,7 @@
             document.getElementById('tag').getBoundingClientRect().top;
         console.log(s);
     }
-    window.addEventListener('scroll',getTop,false)
+    // window.addEventListener('scroll',getTop,false)
 </script>
 
 </html>

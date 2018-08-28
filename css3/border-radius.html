@@ -200,6 +200,32 @@
                         </svg>');
             background-size: 30px 30px;
         }
+        .border4{
+            width: 220px;
+            height: 220px;
+            padding: 1em;
+            border: 1em solid transparent;
+            background: antiquewhite;
+            background-image: linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .6)),url('./bg.jpeg');
+            background-size: cover;
+            background-clip: padding-box,border-box;
+            background-origin: border-box;
+        }
+        .border5{
+            width: 220px;
+            height: 220px;
+            padding: 1em;
+            border: 1em solid transparent;
+            background: linear-gradient(white,white) padding-box,url('./bg.jpeg') border-box 0/cover,antiquewhite;
+        }
+        .border6{
+            width: 220px;
+            height: 220px;
+            padding: 1em;
+            border: 1em solid transparent;
+            background: linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .5)) padding-box,
+                        repeating-linear-gradient(-45deg,red 0,red 12.5%,transparent 0 ,transparent 25%,#58a 0,#58a 37.5%,transparent 0 ,transparent 50%) border-box 0/5em 5em;
+        }
     </style>
 </head>
 
@@ -242,6 +268,9 @@
     <div class="complex-gradient3"></div>
     <div class="complex-gradient4"></div>
     <div class="complex-gradient5"></div>
+    <div class="border4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, fuga!</div>
+    <div class="border5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, fuga!</div>
+    <div class="border6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, fuga!</div>
 
 </body>
 
