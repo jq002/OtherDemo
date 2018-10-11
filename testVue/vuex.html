@@ -1,61 +1,39 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>title</title>
-    </head>
-    <body>
-            <script src="https://unpkg.com/vue/dist/vue.js"></script>
-            <script src="https://unpkg.com/vuex"></script>
-            <div id="app">
-              <input type="text" id="username" value="username">
-              <button @click='clickUser'>button</button>
-              <p>{{count}}
-                <button @click="inc">+</button>
-                <button @click="dec">-</button>
-              </p>
-            </div>
-            <script>
-            
-            const store = new Vuex.Store({
-              state: {
-                count: 0
-              },
-              mutations: {
-                  inc: state => state.count++,
-                dec: state => state.count--
-              }
-            })
-            
-            const app = new Vue({
-              el: '#app',
-              data:{
-                username:'jq'
-              },
-              computed: {
-                count () {
-                    return store.state.count
-                }
-              },
-              // methods: {
-              //   inc () {
-              //     store.commit('inc')
-              //   },
-              //   dec () {
-              //       store.commit('dec')
-              //   }
-              // }
-              // computed:mapState(['count']),
-              methods:
-                mapMutations(['inc','dec']),
-                clickUser(){
-                  console.log(this.username);
-                }
-              
-            })
-            </script>
-    </body>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <div id="app">
+    <ul>
+      <li v-for="item in obj[a].data">{{item}}</li>
+    </ul>
+  </div>
+  <script>
+
+
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        list: ['jq'],
+        a:'aaa',
+        obj: {
+          aaa: {
+            data:
+              [1, 2, 3, 4, 5]
+          },
+          b: ['bb','aa']
+        }
+      }
+    })
+  </script>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex"></script> -->
+
 </html>

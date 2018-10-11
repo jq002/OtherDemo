@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>照片墙</title>
+    <style>
+        .container {
+            perspective: 200px;
+        }
+
+        ul {
+            transform-style: preserve-3d;
+            /* backface-visibility: hidden; */
+            padding: 0;
+            position: absolute;
+            top: 100px;
+            left: 25%;
+
+        }
+        li{
+            list-style-type: none;
+            height: 100px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        li:nth-child(1){
+            background-color:beige;
+            transform: translateZ(20px);
+        }
+        li:nth-child(2){
+            background-color: aqua;
+            transform: rotateY(60deg) translateZ(20px);
+        }
+        li:nth-child(3){
+            background-color: red;
+            transform: rotateY(120deg) translateZ(20px);
+        }
+        li:nth-child(4){
+            background-color: yellowgreen;
+            transform: rotateY(180deg) translateZ(-20px);
+        }
+        li:nth-child(5){
+            background-color: blue;
+            transform: rotateY(240deg) translateZ(-20px);
+        }
+        li:nth-child(6){
+            background-color: blueviolet;
+            transform: rotateY(300deg) translateZ(-20px);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+
 </body>
+
 </html>

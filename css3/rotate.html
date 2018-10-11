@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>transform属性</title>
     <style>
+        body{
+            perspective: 100px;
+        }
         .container {
             width: 100px;
             height: 100px;
@@ -30,12 +33,18 @@
         .z {
             transform: rotateZ(45deg);
         }
+        .p{
+            transform: translateZ(10px);
+        }
     </style>
 </head>
 
 <body>
     <div class="container"><div class="square">normal</div></div>
     <div class="container"><div class="square x">rotateX(45deg)</div></div>
+    <!-- translateZ(10px)的值大于perspective，即大于100px，这个元素将不绘制，即看不到 -->
+    <div class="container"><div class="square p">translateZ</div></div>
+
     <div class="container"><div class="square y">rotateY(45deg)</div></div>
     <div class="container"><div class="square z">rotateZ(45deg)</div></div>
 
