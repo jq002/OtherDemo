@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉菜单-显示动画</title>
+    <style>
+        html,
+        body,
+        ul,
+        li {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .menu {
+            overflow: hidden;
+        }
+
+        h6 {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 10px 30px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .menu>li {
+            float: left;
+        }
+
+        .sub-menu>li {
+            text-align: center;
+            padding: 10px;
+            background-color: coral;
+            color: white;
+            opacity: 0;
+            transition: all .5s ease-out;
+        }
+
+        .menu>li:hover .sub-menu>li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .sub-menu>li:nth-child(2n+1) {
+            transform: translateX(-100%);
+        }
+
+        .sub-menu>li:nth-child(2n) {
+            transform: translateX(100%);
+        }
+
+        .sub-menu>li:nth-child(2) {
+            transition-delay: .1s;
+        }
+
+        .sub-menu>li:nth-child(3) {
+            transition-delay: .2s;
+        }
+
+        .sub-menu>li:nth-child(4) {
+            transition-delay: .3s;
+        }
+
+        .sub-menu>li:nth-child(5) {
+            transition-delay: .4s;
+        }
+
+        .sub-menu>li:nth-child(6) {
+            transition-delay: .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        transform的2D属性，加上transition的过渡效果，设置时间。
+    </p>
+    <section class="demo-1">
+        <ul class="menu">
+            <li>
+                <h6>小学</h6>
+                <ul class="sub-menu">
+                    <li>一年级</li>
+                    <li>二年级</li>
+                    <li>三年级</li>
+                    <li>四年级</li>
+                    <li>五年级</li>
+                    <li>六年级</li>
+                </ul>
+            </li>
+            <li>
+                <h6>初中</h6>
+                <ul class="sub-menu">
+                    <li>初一</li>
+                    <li>初二</li>
+                    <li>初三</li>
+                </ul>
+            </li>
+            <li>
+                <h6>高中</h6>
+            </li>
+            <li>
+                <h6>教案</h6>
+                <ul class="sub-menu">
+                    <li>html</li>
+                    <li>js</li>
+                    <li>jquery</li>
+                    <li>node</li>
+                    <li>java</li>
+                    <li>vue</li>
+                </ul>
+            </li>
+            <li>
+                <h6>课件</h6>
+            </li>
+            <li>
+                <h6>视频</h6>
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>
