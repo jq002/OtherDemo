@@ -13,12 +13,19 @@
 
         ul {
             transform-style: preserve-3d;
-            backface-visibility: hidden;
             padding: 0;
             position: absolute;
             top: 100px;
-            left: 25%;
+            left: 50%;
+            width: 200px;
+            height: 100px;
+            margin-left: -100px;
+            backface-visibility: visible;
 
+        }
+        ul:hover{
+            transform: rotateY(300deg);
+            transition: transform 5s ease-in-out;
         }
         li{
             list-style-type: none;
@@ -27,30 +34,33 @@
             position: absolute;
             top: 0;
             left: 0;
+            backface-visibility: inherit;
+
         }
         li:nth-child(1){
-            background-color:beige;
-            transform: translateZ(180px);
+            background-color:rgba(255, 0, 0, .5);
+            transform: rotateY(0deg) translateZ(174px);
+
         }
         li:nth-child(2){
             background-color: aqua;
-            transform: rotateY(60deg) translateZ(180px);
+            transform: rotateY(60deg) translateZ(174px);
         }
         li:nth-child(3){
             background-color: red;
-            transform: rotateY(120deg) translateZ(180px);
+            transform: rotateY(120deg) translateZ(174px);
         }
         li:nth-child(4){
             background-color: yellowgreen;
-            transform: rotateY(180deg) translateZ(180px);
+            transform: rotateY(180deg) translateZ(174px);
         }
         li:nth-child(5){
             background-color: blue;
-            transform: rotateY(240deg) translateZ(180px);
+            transform: rotateY(240deg) translateZ(174px);
         }
         li:nth-child(6){
             background-color: blueviolet;
-            transform: rotateY(300deg) translateZ(180px);
+            transform: rotateY(300deg) translateZ(174px);
         }
     </style>
 </head>
