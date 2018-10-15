@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js动画原理</title>
+    <style>
+        .block {
+            width: 20px;
+            height: 20px;
+            background-color: aquamarine;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block"></div>
+
+    <script>
+        var block = document.querySelector('.block');
+    </script>
+    <!-- <script>
+        var deg = 0;
+        block.addEventListener("click", function () {
+            var self = this;
+            requestAnimationFrame(function change() {
+                self.style.transform = "rotate(" + (deg++) + "deg)";
+                requestAnimationFrame(change);
+            });
+        });
+    </script> -->
+    <!-- js单线程：所以request任务被其他任务（定时器耗时操作）阻塞了，动画变慢 -->
+
+    <!-- <script>
+        var deg = 0;
+        block.addEventListener("click", function () {
+            setInterval(function () {
+                var i = 0;
+                var t = Date.now();
+                while (++i < 200000000); //模拟耗时操作
+                console.log(Date.now() - t);
+            }, 100);
+
+            var self = this;
+            requestAnimationFrame(function change() {
+                self.style.transform = "rotate(" + (deg++) + "deg)";
+                requestAnimationFrame(change);
+            });
+        });
+    </script> -->
+    <!-- <script>
+        var x = 0, y = 0;
+        block.addEventListener("click", function () {
+            var self = this;
+            requestAnimationFrame(function change() {
+                // console.log(x)
+                self.style.transform = "translate(" +
+                    (x++) + "px," + 100 * Math.cos(Math.PI * (y++ / 180)) + "px)";
+                requestAnimationFrame(change);
+            });
+        });
+    </script> -->
+    <!-- <script>
+        function startAnimation() {
+            var startTime = Date.now();
+
+            requestAnimationFrame(function change() {
+                var current = Date.now() - startTime;
+
+                console.log("动画已执行时间: %fms", current);
+
+                requestAnimationFrame(change);
+            });
+        }
+        startAnimation()
+    </script> -->
+
+</body>
+
+</html>

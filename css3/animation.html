@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 animation 属性</title>
+    <style>
+        h1 {
+            font-size: 16px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border-radius: 61px;
+            box-shadow: 0 0 10px rgba(204, 102, 0, .8);
+            background: #F6D66E;
+            background: -moz-linear-gradient(top, #fff, #F6D66E);
+            background: -webkit-linear-gradient(top, #fff, #F6D66E);
+            background: linear-gradient(top, #fff, #F6D66E);
+            animation: animations 1.5s ease ;
+            /* animation-direction: alternate; */
+            /* animation-iteration-count: 1; */
+            /* animation-fill-mode: backwards; */
+            
+        
+        }
+        @keyframes animations {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(100px, 100px);
+            }
+
+            100% {
+                transform: translate(100px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>弹性运动的太阳：</h1>
+    <div></div>
+
+</body>
+
+</html>
