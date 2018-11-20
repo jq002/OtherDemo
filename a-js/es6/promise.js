@@ -1,4 +1,4 @@
-
+//未复制完整
 function Promise1(resolver){
     if(resolver&&typeof resolver!='function'){
         throw new Error('Promise resolver error')
