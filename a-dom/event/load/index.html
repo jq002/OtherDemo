@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>load ,beforeunloaded</title>
+    <script>
+        window.addEventListener('beforeunload', function (event) {
+            console.log('I am the 1st one.');
+            console.log(event);
+            event.returnValue='do you want leave this page';
+        });
+        window.addEventListener('unload', function (event) {
+            console.log('I am the 3rd one.');
+            console.log(event)
+        });
+    </script>
+</head>
+
+<body>
+    <h2 id="title">beforeunload事件是否显示对话框</h2>
+    <iframe src="./child-iframe.html"></iframe>
+    <script>
+        // window.addEventListener("beforeunload", function (event) {
+        //     // Cancel the event as stated by the standard.
+        //     // event.preventDefault();
+        //     // window.alert()
+        //     // Chrome requires returnValue to be set.
+        //     // event.returnValue = '';
+        // });
+    </script>
+    <script>
+
+        document.addEventListener('load', (e) => {
+            console.log('document', e);
+        })
+        window.addEventListener('load', (e) => {
+            console.log('window', e);
+        })
+    document.getElementById('title').addEventListener('load',(e)=>{
+        console.log('element');
+
+    })
+    </script>
+    <script>
+        var script = document.createElement("script");
+        script.addEventListener("load", function (event) {
+            console.log("Script finished loading and executing");
+        });
+        script.src = "./index.js";
+        script.async = true;
+        document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+    </script>
+</body>
+
+</html>

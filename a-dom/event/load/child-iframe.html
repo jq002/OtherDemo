@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Child Frame</title>
+    <script>
+      window.addEventListener('beforeunload', function(event) {
+        console.log('I am the 2nd one.');
+        console.log(event);
+            //   event.returnValue='';
+            // return 'child'
+      });
+      window.addEventListener('unload', function(event) {
+        console.log('I am the 4th and last one…');
+      });
+    </script>
+  </head>
+  <body>
+      ☻
+  </body>
+</html>
