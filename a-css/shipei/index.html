@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function tabletPage(params) {
+    var os = function () {
+        var ua = navigator.userAgent,
+            isWindowsPhone = /(?:Windows Phone)/.test(ua),
+            isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+            isAndroid = /(?:Android)/.test(ua),
+            isFireFox = /(?:Firefox)/.test(ua),
+            isChrome = /(?:Chrome|CriOS)/.test(ua),
+            isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(
+                ua)),
+            isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+            isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid: isAndroid,
+            isPc: isPc
+        };
+    }();
+    var m = document.querySelectorAll(params.selectors),
+        k = m.length,
+        b = document.documentElement.clientWidth,
+        n = document.documentElement.clientHeight,
+        q = n * params.width / params.height;
+
+    if (os.isTablet || os.isPc) {
+        console.log('tablet,pc')
+
+        while (--k >= 0) {
+            m[k].style.width = q + 'px';
+            m[k].style.position = "absolute";
+            m[k].style.left = (b - q) / 2 + "px";
+            m[k].style.top = 0 + 'px';
+        }
+
+    }
+}
+    </script>
+</body>
+</html>

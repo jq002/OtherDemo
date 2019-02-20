@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fonts</title>
+    <style>
+    .selected-txt{
+        width: 500px;
+        margin: 50px;
+    }
+    .selected-txt::first-letter{
+        /* 第一个字母 */
+        font-size: 30px;
+    }
+    .selected-txt::first-line{
+        /* 第一行 */
+        color: red;
+    }
+    .selected-txt::selection{
+        /* 用户选择的区域 */
+        /* font-size: 50px; 不起作用*/
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Fonts</h1>
+    <h2>选中文字</h2>
+    <p class="selected-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium optio assumenda, quibusdam consequuntur quis ut repellendus consectetur cum ab doloribus esse est reprehenderit amet eligendi alias voluptate quo. Iure, ab?</p>
+</body>
+</html>

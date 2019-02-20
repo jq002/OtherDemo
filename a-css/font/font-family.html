@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    body {
+      padding-left: 10px;
+    }
+
+    body>h1 {
+      color: red;
+      clear: both;
+    }
+
+    .family-stack {
+      font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
+    }
+
+    .family-sans-serif {
+      font-family: sans-serif;
+    }
+
+    .family-serif {
+      font-family: serif;
+    }
+
+    .family-monospace {
+      font-family: monospace;
+    }
+
+    .family-cursive {
+      font-family: cursive;
+    }
+
+    .family-fantasy {
+      font-family: fantasy;
+    }
+
+    .family-Source-Han-Sans {
+      font-family: 'Source Han Sans CN';
+      /* font-family: "Source Han Sans CN"; */
+    }
+
+    .family-arial {
+      font-family: Arial;
+    }
+
+    .style-italic {
+      font-style: italic;
+    }
+
+    .style-oblique {
+      font-style: oblique;
+    }
+
+    .absolute-size-large {
+      font-size: large;
+    }
+
+    .absolute-size-medium {
+      font-size: medium;
+    }
+
+    .parent-em {
+      font-size: 10px;
+    }
+
+    .font-100 {
+      font-weight: 100;
+    }
+
+    .font-200 {
+      font-weight: 200;
+    }
+
+    .font-300 {
+      font-weight: 300;
+    }
+
+    .font-400 {
+      font-weight: 400;
+    }
+
+    .font-500 {
+      font-weight: 500;
+    }
+
+    .font-600 {
+      font-weight: 600;
+    }
+
+    .font-700 {
+      font-weight: 700;
+    }
+
+    .font-800 {
+      font-weight: 800;
+    }
+
+    .font-900 {
+      font-weight: 900;
+    }
+
+    .left {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .variant-small {
+      font-variant: small-caps;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>font-family</h1>
+  <hr>
+  <div>
+    <div class="family-stack">
+      <p>
+        font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
+        "WenQuanYi Micro Hei", sans-serif;
+      </p>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left">
+      <h2>default fonts</h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-sans-serif">
+      <h2>sans-serif</h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-serif">
+      <h2>serif</h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-monospace">
+      <h2>monospace </h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-cursive">
+      <h2>cursive </h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-fantasy">
+      <h2>fantasy </h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+  </div>
+
+  <h1>font-size</h1>
+  <hr>
+  <div class="left">
+    <h1>h1:font-size</h1>
+    <h2>h2:font-size</h2>
+    <h3>h3:font-size</h3>
+    <h4>h4:font-size</h4>
+    <h5>h5:font-size</h5>
+    <h6>h6:font-size</h6>
+  </div>
+  <div class="parent-em left">
+    <h1>h1:font-size</h1>
+    <h2>h2:font-size</h2>
+    <h3>h3:font-size</h3>
+    <h4>h4:font-size</h4>
+    <h5>h5:font-size</h5>
+    <h6>h6:font-size</h6>
+  </div>
+  <div class="left">
+    <h2>font-size</h2>
+    <p>default:1234abcx我们</p>
+    <p class="absolute-size-medium">absolute-size-medium:1234abcx我们</p>
+    <p class="absolute-size-large">absolute-size-large:1234abcx我们</p>
+  </div>
+
+  <h1>font-weight</h1>
+  <hr>
+  <div class="family-sans-serif left">
+    <h2>sans-serif</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
+  <div class="family-serif left">
+    <h2>serif</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
+  <div class="family-monospace left">
+    <h2>monospace</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
+  <div class="family-Source-Han-Sans left">
+    <h2>Source Han Sans</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
+  <div class="family-arial left">
+    <h2>Arial</h2>
+    <p class="font-100">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-200">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-300">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-400">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-500">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-600">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-700">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-800">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+    <p class="font-900">1234abcx<span class="style-italic">1234abcx</span><span class="style-oblique">oblique:1234abcx</span></p>
+  </div>
+  <h1>font-variant</h1>
+  <hr>
+  <div>
+    <h2>small-caps</h2>
+    <p>1234abcx QWERT qwert</p>
+    <p class="variant-small">1234abcx QWERT qwert</p>
+  </div>
+  <script>
+    ;
+    (function () {
+      var src = '//cdn.bootcss.com/eruda/1.2.4/eruda.min.js';
+      document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+      document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+    })();
+  </script>
+</body>
+
+</html>
