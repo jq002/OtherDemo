@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>展示支持的字体，可供选择</title>
+  </head>
+  <body>
+    <h2>方案一：判断是否支持字体</h2>
+    <div class="demo">
+      <p>
+        字体设置：
+        <select id="select">
+          <!-- <option>请选择</option> -->
+        </select>
+      </p>
+      <p id="target">
+        唐门外门弟子唐三，因偷学内门绝学为唐门所不容，跳崖明志时却发现没有死，反而以另外一个身份来到了另一个世界，一个属于武魂的世界，名叫斗罗大陆。这里没有魔法，没有斗气，没有武术，却有神奇的武魂。这里的每个人，在自己六岁的时候，都会在武魂殿中令武魂觉醒。武魂有动物，有植物，有器物，武魂可以辅助人们的日常生活。而其中一些特别出色的武魂却可以用来修炼并进行战斗，这个职业，是斗罗大陆上最为强大也是最荣耀的职业——魂师!<br />
+        当唐门暗器来到斗罗大陆，当唐三武魂觉醒，他能否在这片武魂的世界再铸唐门的辉煌？他能否成为这个世界的主宰：神?
+      </p>
+    </div>
+    <div id="detector"></div>
+    <script src="./font-ch-en.js"></script>
+    <script src="./detector.js"></script>
+    <script type="text/javascript">
+      var isSupportFontFamily = function(fontFamily) {
+        if (typeof fontFamily != 'string') {
+          return false
+        }
+
+        var defaultFontFamily = 'Arial'
+        if (fontFamily.toLowerCase() == defaultFontFamily.toLowerCase()) {
+          return true
+        }
+
+        var defaultLetter = 'a'
+        var defaultFontSize = 100
+
+        // 使用该字体绘制的canvas
+        var width = 100,
+          height = 100
+        var canvas = document.createElement('canvas')
+        var context = canvas.getContext('2d')
+        canvas.width = width
+        canvas.height = height
+        // 全局一致的绘制设定
+        context.textAlign = 'center'
+        context.fillStyle = 'black'
+        context.textBaseline = 'middle'
+        var getFontData = function(fontFamily) {
+          // 清除
+          context.clearRect(0, 0, width, height)
+          // 设置字体
+          context.font =
+            defaultFontSize + 'px ' + fontFamily + ', ' + defaultFontFamily
+          context.fillText(defaultLetter, width / 2, height / 2)
+
+          var data = context.getImageData(0, 0, width, height).data
+
+          return [].slice.call(data).filter(function(value) {
+            return value != 0
+          })
+        }
+
+        return (
+          getFontData(defaultFontFamily).join('') !==
+          getFontData(fontFamily).join('')
+        )
+      }
+    </script>
+    <script>
+      // 下面是演示代码
+      var eleSelect = document.getElementById('select')
+      var eleTarget = document.getElementById('target')
+      var eleDetector = document.getElementById('detector')
+      // 数据
+      var arrFont = dataFont['windows'].concat(
+        dataFont['OS X'],
+        dataFont['office'],
+        dataFont['open']
+      )
+      var option = ''
+      var content = ''
+      var d = new Detector()
+      d.detect('font name')
+      arrFont.forEach(function(obj) {
+        var fontFamily = obj.en
+        if (isSupportFontFamily(fontFamily)) {
+          option =
+            option +
+            '<option value="' +
+            fontFamily +
+            '">' +
+            obj.ch +
+            '</option>'
+        }
+        var flag = d.detect(fontFamily) ? '是' : '否'
+        content = content + '<p style="font-family:\''+ fontFamily +'\';">' + obj.ch + ':' + obj.en + ':' + flag
+      })
+      eleSelect.innerHTML = option
+      eleDetector.innerHTML = content
+      // 事件
+      eleSelect.addEventListener('change', function() {
+        eleTarget.style.fontFamily = eleSelect.value
+      })
+      // 首次匹配
+      eleTarget.style.fontFamily = eleSelect.value
+    </script>
+  </body>
 </html>

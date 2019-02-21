@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>font-family中英文名称对照</title>
+    <style>
+      .demo {
+        max-width: 600px;
+        margin: 10px auto;
+        font-family: sans-serif;
+      }
+
+      .table {
+        width: 100%;
+        line-height: 21px;
+        table-layout: fixed;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      .table thead td,
+      .table th {
+        line-height: 20px;
+        background-color: #f7f9fa;
+        text-align: left;
+        margin: 0;
+      }
+
+      .table tbody td {
+        background-color: #fff;
+        border-bottom: 1px solid #ededed;
+      }
+
+      .table td,
+      .table th {
+        padding: 14px 10px;
+      }
+
+      /*.table td:nth-of-type(3),
+      .table th:nth-of-type(3) {
+          display: none;
+      }*/
+
+      .table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .table td p {
+        display: inline-block;
+        margin: 0 5px 0 0;
+      }
+      .red {
+        color: red;
+      }
+
+      input:disabled,
+      input:disabled + label {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="root-font-family"></h1>
+    <div class="demo">
+      <h4>windows常见内置中文字体</h4>
+      <table class="table" data-type="windows">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>OS X常见内置中文字体</h4>
+      <table class="table" data-type="OS X">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>office安装后新增字体</h4>
+      <table class="table" data-type="office">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>开源字体</h4>
+      <table class="table" data-type="open">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>版权字体（汉仪）</h4>
+      <table class="table" data-type="hanyi">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>版权字体（方正）</h4>
+      <table class="table" data-type="fangzheng">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h4>其他字体</h4>
+      <table class="table" data-type="other">
+        <thead>
+          <tr>
+            <th width="100">字体中文名</th>
+            <th width="150">字体英文名</th>
+            <th>字体应用</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      ;(function() {
+        // 系统默认字体
+        var rootFontFamily = (document.documentElement.currentStyle
+          ? document.documentElement.currentStyle
+          : window.getComputedStyle(document.documentElement)
+        ).fontFamily
+        document.getElementById('root-font-family').innerText =
+          'root font-family:' + rootFontFamily
+      })();
+    </script>
+    <script src="./font-ch-en.js"></script>
+  </body>
+</html>
