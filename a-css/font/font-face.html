@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@font-face</title>
+    <style>
+        @font-face {
+            font-family: 'None Bold';
+            src: local('Source Han Sans CN');
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'JQ';
+            src: local('Source Han Sans CN');
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'JQ';
+            src: local('Source Han Sans CN Heavy');
+            font-weight: 900;
+        }
+
+        @font-face {
+            font-family: 'JQ';
+            src: local('Comic Sans MS');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'kaiti';
+            src: local('Times New Roman');
+        }
+
+        .family-none-bold {
+            font-family: 'None Bold';
+        }
+
+        .family-jq {
+            font-family: JQ;
+        }
+
+        .family-Source-Han-Sans {
+            font-family: 'Source Han Sans CN';
+        }
+
+        .family-fangsong {
+            /* 名称匹配不区分大小写 */
+            font-family: 'fangsong';
+        }
+
+        .family-false-kaiti {
+            /* 如果一个由@font-face规则定义的字体家族仅包含无效的字体数据，则它应当被认为是一个存在的但包含空的字符映射的字体；在此情况下，拥有相同名称的平台字体不能匹配。 */
+            font-family: 'kaiti';
+        }
+
+        .font-100 {
+            font-weight: 100;
+        }
+
+        .font-200 {
+            font-weight: 200;
+        }
+
+        .font-300 {
+            font-weight: 300;
+        }
+
+        .font-400 {
+            font-weight: 400;
+        }
+
+        .font-500 {
+            font-weight: 500;
+        }
+
+        .font-600 {
+            font-weight: 600;
+        }
+
+        .font-700 {
+            font-weight: 700;
+        }
+
+        .font-800 {
+            font-weight: 800;
+        }
+
+        .font-900 {
+            font-weight: 900;
+        }
+
+        .left {
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <h2>default</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+
+    </div>
+    <div class="family-Source-Han-Sans left">
+        <h2>Source Han Sans</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+
+    </div>
+    <div class="family-none-bold left">
+        <h2>None Bold</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+
+    </div>
+    <div class="family-jq left">
+        <h2>自定义组合字体JQ</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <!-- 如果没有匹配的外观，或者匹配的外观不包含需要显示的字符的字形，则选择下一个家族名称，并重复前面两步。 -->
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+
+    </div>
+    <div class="family-fangsong left">
+        <h2>仿宋</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+    </div>
+    <div class="family-false-kaiti left">
+        <h2>自定义（不包含中文）-假的楷体</h2>
+        <p class="font-100">1234abcx我们</p>
+        <p class="font-200">1234abcx我们</p>
+        <p class="font-300">1234abcx我们</p>
+        <p class="font-400">1234abcx我们</p>
+        <p class="font-500">1234abcx我们</p>
+        <p class="font-600">1234abcx我们</p>
+        <p class="font-700">1234abcx我们</p>
+        <p class="font-800">1234abcx我们</p>
+        <p class="font-900">1234abcx我们</p>
+        <p>“哈哈”</p>
+
+    </div>
+</body>
+
+</html>
