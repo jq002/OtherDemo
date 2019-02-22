@@ -21,6 +21,15 @@
 
     }
 
+    .family-menu {
+      /* 在IE8，menu会覆盖同选择器里的font-size:medium; */
+      font: menu;
+      /* font-size: medium; */
+    }
+    .family-menu p{
+      font-size: medium;
+    }
+
     .family-sans-serif {
       font-family: sans-serif;
     }
@@ -114,11 +123,39 @@
     .variant-small {
       font-variant: small-caps;
     }
+    .font-caption{
+      font: caption;
+    }
+    .font-icon{
+      font: icon;
+    }
+    .font-message-box{
+      font: message-box;
+    }
+    .font-menu{
+      font: menu;
+    }
+    .font-small-caption{
+      font: small-caption;
+    }
+    .font-status-bar{
+      font:status-bar;
+    }
   </style>
 </head>
 
 <body>
-
+  <h1>font</h1>
+  <hr>
+  <div class="left">
+    <h2>font系统字体</h2>
+    <p class="font-menu">menu:1234abcx我们</p>
+    <p class="font-caption">caption:1234abcx我们</p>
+    <p class="font-small-caption">small-caption:1234abcx我们</p>
+    <p class="font-status-bar">status-bar:1234abcx我们</p>
+    <p class="font-icon">icon:1234abcx我们</p>
+    <p class="font-message-box">message-box:1234abcx我们</p>
+  </div>
   <h1>font-family</h1>
   <hr>
   <div>
@@ -133,6 +170,12 @@
     </div>
     <div class="left">
       <h2>default fonts</h2>
+      <p>1234abcx</p>
+      <p>我们大家一二三</p>
+      <p class="style-italic">1234abcx我们</p>
+    </div>
+    <div class="left family-menu">
+      <h2>menu</h2>
       <p>1234abcx</p>
       <p>我们大家一二三</p>
       <p class="style-italic">1234abcx我们</p>
@@ -196,6 +239,30 @@
 
   <h1>font-weight</h1>
   <hr>
+  <div class="left">
+    <h2>default font</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
+  <div class="family-menu left">
+    <h2>menu</h2>
+    <p class="font-100">1234abcx我们</p>
+    <p class="font-200">1234abcx我们</p>
+    <p class="font-300">1234abcx我们</p>
+    <p class="font-400">1234abcx我们</p>
+    <p class="font-500">1234abcx我们</p>
+    <p class="font-600">1234abcx我们</p>
+    <p class="font-700">1234abcx我们</p>
+    <p class="font-800">1234abcx我们</p>
+    <p class="font-900">1234abcx我们</p>
+  </div>
   <div class="family-sans-serif left">
     <h2>sans-serif</h2>
     <p class="font-100">1234abcx我们</p>
