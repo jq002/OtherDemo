@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 10px;
+            border: 5px solid;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+
+        .father {
+            width: 300px;
+        }
+
+        .son {
+            margin: 0 -20px;
+        }
+
+        .layout .layout-right {
+            float: right;
+            width: 240px;
+            background-color: aqua;
+        }
+
+        .layout .layout-left {
+            margin-right: 240px;
+            background-color: antiquewhite;
+        }
+        h1{
+            clear: both;
+        }
+        .full{
+            width: 100%;
+            float: left;
+            background-color: antiquewhite;
+        }
+        .layout3 .layout-right{
+            float: left;
+            background-color: aqua;
+            width: 240px;
+        }
+        .margin{
+            border: 1px solid;
+            padding: 10px;
+            margin: 20px;
+            background-color: aqua;
+        }
+        .inline-block{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>margin</h1>
+    <div class="box"></div>
+    <div>
+        <p class="margin">block元素<span class="margin">inline元素</span><span class="margin inline-block">inline-block元素</span></p>
+        <span class="margin">inline元素</span>
+        <span class="margin inline-block">inline-block元素</span>
+    </div>
+    <div class="father">
+        <div class="son">margin:0 -20px;</div>
+    </div>
+    <h1>clear float</h1>
+    <div class="layout">
+        <div class="layout-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, blanditiis in! Tempore quibusdam modi suscipit ab ullam at, praesentium autem consequatur non ratione molestias. Neque nam tempora fugiat dolorum at!</div>
+        <div class="layout-right">float:right</div>
+    </div>
+    <h1>clear float</h1>
+    <div class="layout">
+        <div class="layout-right">视觉右浮动，DOM元素在前，DOM顺序与视觉顺序不一致</div>
+        <div class="layout-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda, illo blanditiis quasi quae sunt necessitatibus quos minima temporibus hic at in dolorum quibusdam dolorem inventore provident facilis ipsum. Perspiciatis.</div>
+    </div>
+    <h1>clear float</h1>
+    <div class="layout3">
+        <div class="full">
+                <div class="layout-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, blanditiis in! Tempore quibusdam modi suscipit ab ullam at, praesentium autem consequatur non ratione molestias. Neque nam tempora fugiat dolorum at!</div>
+        </div>
+        <div class="layout-right">float:right</div>
+    </div>
+</body>
+
+</html>
