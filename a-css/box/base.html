@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>css盒类型</title>
+    <style>
+      .box {
+        margin: 20px;
+      }
+      .relative {
+        position: relative;
+      }
+      .absolute {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      html {
+        margin: 20px;
+        padding: 20px;
+      }
+      body {
+        padding-bottom: 100px;
+      }
+      .red {
+        background-color: red;
+        position: absolute;
+        top: 0;
+      }
+      .padding {
+        padding: 20px;
+      }
+      .border {
+        border: 1px solid;
+      }
+      .block {
+        display: block;
+      }
+      .inline {
+        display: inline;
+      }
+      .inline-block{
+          display: inline-block;
+      }
+      .bg-color{
+          background-color: aqua;
+      }
+      .width{
+          width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>margin 合并</h1>
+    <div class="box">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste
+        fugit distinctio ratione repellendus, blanditiis repellat quidem eius
+        amet, tenetur quos quod esse voluptates suscipit temporibus quas
+        dolorum, ipsa rerum?
+      </p>
+      <p>请二位么温热让他人托人</p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum odio
+        mollitia vel, rem, fugiat libero quo sed quam iusto hic recusandae
+        possimus nisi voluptatem in molestias a alias debitis ullam?
+      </p>
+    </div>
+    <div class="box">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci iste
+        fugit distinctio ratione repellendus, blanditiis repellat quidem eius
+        amet, tenetur quos quod esse voluptates suscipit temporibus quas
+        dolorum, ipsa rerum?
+      </p>
+      <p>请二位么温热让他人托人</p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum odio
+        mollitia vel, rem, fugiat libero quo sed quam iusto hic recusandae
+        possimus nisi voluptatem in molestias a alias debitis ullam?
+      </p>
+    </div>
+    <h1>行内级元素是包含快</h1>
+    <span class="relative padding">
+      span元素，position:relative; 包含块：内边距边界框；
+      <span class="absolute">
+        span元素，absolute定位，变为块级元素;
+      </span>
+    </span>
+    <h1>祖先定位元素的内边距边界：absolute定位的包含块</h1>
+    <div class="relative padding">
+      div元素，position:relative; 包含块：内边距边界框；
+      <span class="absolute">
+        span元素，absolute定位，变为块级元素;
+      </span>
+    </div>
+    <h1>初始包含块</h1>
+    <div class="red">red</div>
+    <h1>行内盒包含流内块级盒；以下的span是生成的是块级容器盒</h1>
+    <span class="border ">
+      this is span element;匿名块盒C1
+      <p>this is p element;p块级盒</p>
+      this is span element;匿名块盒C2
+    </span>
+    <h1>行内盒包含流内块级盒；以下的span是生成的是块级容器盒</h1>
+
+    <p class="border  inline">
+      this is span element;匿名块盒C1
+      <span class="block">this is p element;p块级盒</span>
+      this is span element;匿名块盒C2
+    </p>
+    <h1>原子行内盒不可拆分</h1>
+    <div class="width">
+      在行内格式化上下文中，盒是从包含块的顶部开始<span class="inline-block bg-color">一个挨一个水平</span>放置的。这些盒之间的水平外边距，边框和内边距都有效。盒可能会以不同的方式垂直对齐：以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。包含来自同一行的盒的矩形区域叫做行框
+      行框的宽度由包含块和浮动情况决定，行框的高度由行高的计算小节给出的规则决定
+    </div>
+    <h1>行内盒可拆分</h1>
+    <div class="width">
+        在行内格式化上下文中，盒是从包含块的顶部开始<span class="inline bg-color">一个挨一个水平</span>放置的。这些盒之间的水平外边距，边框和内边距都有效。盒可能会以不同的方式垂直对齐：以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。包含来自同一行的盒的矩形区域叫做行框
+        行框的宽度由包含块和浮动情况决定，行框的高度由行高的计算小节给出的规则决定
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BFC块级格式化上下文</title>
+    <style>
+      .left {
+        float: left;
+        margin-right: 10px;
+      }
+      .right {
+        overflow: hidden;
+        background-color: antiquewhite;
+      }
+      .container {
+        margin: 5px;
+      }
+      .bfc {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>自适应两列布局</h1>
+    <div class="bfc">
+      <div class="left">
+        <img src="./../bg2.png" alt="" srcset="" />
+      </div>
+      <div class="right">
+        overflow: hidden;生成快格式化上下文
+      </div>
+    </div>
+    <h1>div不是BFC</h1>
+    <div class="container">
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+    <div class="container">
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+    <h1>BFC自身margin合并问题</h1>
+    <div class="container bfc">
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+    <div class="container bfc">
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+  </body>
+</html>
