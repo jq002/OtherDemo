@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆饼文字问题</title>
+    <script>
+        //绘制饼图
+        function drawCircle(canvasId, options, circle) {
+            var c = document.getElementById(canvasId);
+            var ctx = c.getContext("2d");
+
+            var radius = circle.radius; //半径
+            var ox = radius + circle.radiusDist,
+                oy = radius + circle.radiusDist; //圆心
+            var textX, textY,desX,desY;
+            var startAngle = 0; //起始弧度
+            var endAngle = 2*Math.PI; //结束弧度
+            ctx.beginPath();
+                ctx.moveTo(ox, oy); //移动到到圆心
+                ctx.arc(ox, oy, radius, startAngle, endAngle, false);
+                ctx.closePath();
+                ctx.stroke();
+            for (var i = 0; startAngle < endAngle; i++) {
+                //绘制文字
+                textX = ox + (radius + 10) * Math.cos(startAngle);
+                textY = oy + (radius + 10) * Math.sin(startAngle);
+                // ctx.beginPath();
+                ctx.fillStyle = "#000000";
+                ctx.font = '16px "Microsoft YaHei"';
+                var metric=ctx.measureText('200台');
+                if(Math.PI/2<startAngle&&startAngle<3/2*Math.PI){
+                    textX=textX-metric.width;
+                }
+                if(Math.PI/4<startAngle&&startAngle<3/4*Math.PI){
+                    textY=textY+8;
+                }
+                ctx.fillText('200台', textX, textY);
+               
+                console.log('angle:',startAngle,'textX,Y:',textX,textY,'width:',metric.width);
+                startAngle= startAngle+2*Math.PI/60;
+
+            }
+        }
+
+        function init() {
+            var options = [{
+                    percent: 0.6,
+                    color: '#60c0dd',
+                    data: '200台',
+                    des: '断网'
+                },
+                {
+                    percent: 0.15,
+                    color: '#ffd186',
+                    data: '30台',
+                    des: '联网'
+                },
+                {
+                    percent: 0.25,
+                    color: '#ff938a',
+                    data: '60台',
+                    des: '未连接'
+                }
+            ];
+            var circle = {
+                radius: 100,
+                radiusDist: 50,
+                desYDist: 50,
+                desXDist: 80,
+                desRadius:6
+            }
+
+
+
+
+            drawCircle("canvas_circle", options, circle);
+        }
+
+        //页面加载时执行init()函数
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <h3>HTML5绘制饼图演示</h3>
+    <p>
+        <canvas id="canvas_circle" width="500" height="300" style="border:2px solid #0026ff;">
+            浏览器不支持canvas
+        </canvas>
+    </p>
+</body>
+
+</html>
