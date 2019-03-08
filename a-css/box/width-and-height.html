@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>width and height</title>
+  </head>
+  <body>
+    <h2>行内非替换元素</h2>
+    <span>行内非替换元素:auto</span>
+    <h2>常规流中的块级非替换元素</h2>
+    <div style="width:300px;">常规流中的块级非替换元素</div>
+    <div style="width:670px;margin-left: 10px;margin-right: 80px;">
+      常规流中的块级非替换元素
+    </div>
+    <h2>浮动的非替换元素</h2>
+    <div style="float:left;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, iure
+      doloremque eveniet possimus repellat, cum unde vitae temporibus
+      dignissimos rerum laborum? Alias eos, repellendus placeat autem odio nam
+      possimus dicta?
+    </div>
+
+    <h2>首选最小宽度</h2>
+    <div style="width:0;background: lightcoral;">我们大家</div>
+    <div style="width:0;background: lightcoral;">
+      Lorem-ipsum dolor wqewerppppppppeqq? aa#
+    </div>
+    <h2>首选最小宽度2</h2>
+    <div style="width:0;background: lightcoral;"><p>我们大家</p></div>
+    <h2>5 浮动的非替换元素</h2>
+    <h4>自适应宽度就是：min(max(首选最小宽度, 可用宽度), 首选宽度)</h4>
+    <h4>首选最小宽度小于可用宽度；；；首选宽度大于可用宽度；；==>可用宽度</h4>
+    <h4>浮动元素宽度180px==包含块宽度; </h4>
+    <div style="width:180px;overflow:hidden;">
+      <!-- float: left;浮动元素宽度180px==包含块宽度; -->
+      <div style="float: left;">
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+      </div>
+    </div>
+    <h4>首选最小宽度小于可用宽度；；；首选宽度小于可用宽度==>首选宽度</h4>
+    <h4>浮动元素宽度136px==img宽度; </h4>
+    <div style="width:180px;overflow:hidden;">
+        <!-- float: left;浮动元素宽度136px==img宽度; -->
+      <div style="float: left;">
+        <img src="./../img.png" alt="" />
+      </div>
+    </div>
+    <h4>首选最小宽度大于可用宽度；；；首选宽度大于首选最小宽度==>首选宽度</h4>
+    <h4>浮动元素宽度406px==aaaa文字的总宽度;</h4>
+    <div style="width:180px;overflow:hidden;">
+        <!-- float: left;浮动元素宽度406px==aaaa文字的总宽度; -->
+      <div style="float: left;">
+        <img src="./../img.png" alt="" />aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      </div>
+    </div>
+    <h2> 绝对定位的非替换元素</h2>
+    <div style="position:relative;">
+    <div style="position:absolute;width:100px;left:20px;right:20px;">hhhhh</div>
+    </div>
+  </body>
+</html>

@@ -14,7 +14,7 @@
       }
       .absolute {
         position: absolute;
-        right: 0;
+        left: 0;
         top: 0;
       }
       html {
@@ -27,7 +27,7 @@
       .red {
         background-color: red;
         position: absolute;
-        top: 0;
+        bottom: 0;
       }
       .padding {
         padding: 20px;
@@ -45,7 +45,7 @@
         display: inline-block;
       }
       .bg-color {
-        background-color: aqua;
+        background-color: rgba(0, 255, 255, 0.5);
       }
       .bg-color-gray {
         background-color: #dddddd;
@@ -57,18 +57,33 @@
     </style>
   </head>
   <body>
-    <h2>行内级元素是包含块</h2>
-    <span class="relative padding bg-color-gray">
-      该祖先是一个行内元素
-      <span class="absolute bg-color">
+    <h2>行内级元素是包含块(行内盒并非行框)</h2>
+    <h4>
+      元素具有'position:absolute':包含块就是环绕着为该元素生成的第一个和最后一个行内盒的内边距框的边界框
+    </h4>
+    <h4>行内非替换元素:'height'属性不适用。内容区（content area）的高度应该基于字体（与子级元素无关）</h4>
+    <h4>与行内盒的高度无关；行内盒的高度（不受子级元素高度影响）等于line-height；</h4>
+    <span
+      class="relative  bg-color-gray"
+      style="border: 5px solid rgba(0, 0, 0, 0.5);padding: 3px;line-height:50px;"
+    >
+      该祖先是一个。。<strong style="font-size:2.5em;padding: 40px 0;">行内元素</strong>行内元素行内元素行内元素行内元素行内元素行内元素行内元素行内元素
+      <span class="absolute bg-color" >
+        <!-- style="line-height:normal;" -->
         absolute定位
       </span>
     </span>
-    <h2>行内级元素是包含块；跨行分割</h2>
-    <span class="relative padding bg-color-gray">
+    <h2>空-行内级元素是包含块</h2>
+    <span class="relative  bg-color-gray">
+      <span class=" bg-color" style="position:absolute;right:0;">
+        absolute定位
+      </span>
+    </span>
+    <h2 style="margin-top:50px;">行内级元素是包含块；跨行分割</h2>
+    <span class="relative padding bg-color-gray" style="border:1px solid;">
       该祖先是一个行内元素，包含块就是环绕着为该元素生成的第一个和最后一个行内盒的内边距框的边界框（bounding
       box）；在CSS 2.1中，如果该行内元素被跨行分割了，那么包含块是未定义的
-      <span class="absolute bg-color">
+      <span class=" bg-color" style="position:absolute;right:0;top:0;height:100%;">
         absolute定位;
       </span>
     </span>
@@ -81,12 +96,12 @@
     </div>
     <h2>初始包含块是视口，而非html元素</h2>
     <div class="red">red</div>
-    <h2>行内盒包含流内块级盒；</h2>
+    <!-- <h2>行内盒包含流内块级盒；</h2>
     <span class="border ">
       this is span element;匿名块盒C1
       <p>this is p element;p块级盒</p>
       this is span element;匿名块盒C2
-    </span>
+    </span> -->
     <h2>行内盒包含流内块级盒；</h2>
 
     <p class="border  inline">
@@ -94,11 +109,19 @@
       <span class="block">this is p element;p块级盒</span>
       this is span element;匿名块盒C2
     </p>
+    <h2>块级元素</h2>
+    <div>
+      asdj
+      <p>aaaaaaaaaaaaa</p>
+      fhdjfh
+    </div>
     <h2>原子行内盒不可拆分;</h2>
-    <h3>text-align: justify;不会拉伸inline-table和inline-block盒</h3>
+    <h4>text-align: justify;不会拉伸inline-table和inline-block盒</h4>
     <div class="width">
       在行内格式化上下文中，盒是从包含块的顶部开始
-      <span class="inline-block bg-color">一个挨一个水平</span>
+      <span class="inline-block bg-color" style="width:50px;"
+        >一个挨一个水平</span
+      >
       放置的。这些盒之间的水平外边距，边框和内边距都有效。盒可能会以不同的方式垂直对齐：以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。包含来自同一行的盒的矩形区域叫做行框
       行框的宽度由包含块和浮动情况决定，行框的高度由行高的计算小节给出的规则决定
     </div>
@@ -111,5 +134,15 @@
     </div>
     <h2>行内盒子</h2>
     <span class="border">span<em>em</em>span</span>
+    <h2>行内级元素</h2>
+    <span style="display:inline-block;width: 300px;">
+      <span>哦我们</span>
+    </span>
+    <h2>行内级元素</h2>
+    <span style="line-height:60px;vertical-align: top;">qwer,</span><span  style="line-height:40px;vertical-align: top;">qwer,</span><span>qwer,</span><span>qwer,</span>
+    <h2>块级元素</h2>
+    <div>
+      <p>ppp</p>
+    </div>
   </body>
 </html>

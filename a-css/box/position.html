@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>定位方案</title>
+    <style>
+      .relative {
+        position: relative;
+        top: 50px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .grey {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .blue {
+        background-color: aqua;
+      }
+      .absolute {
+        position: absolute;
+        top: 50px;
+        margin: 20px;
+      }
+      .float {
+        float: left;
+        margin: 30px;
+        width: 100px;
+      }
+      .absolute-parent {
+        position: relative;
+      }
+      .margin {
+        margin: 20px 0;
+        width: 500px;
+        text-align: justify;
+      }
+      .float-margin{
+          margin-top: -30px;
+      }
+      .clear{
+          clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>relative定位</h2>
+    <h3>当盒B为相对定位时，后面的盒的位置仍按照B没有偏移量来计算。</h3>
+    <div class="relative box grey"></div>
+    <div class="box blue"></div>
+    <h2>absolute定位</h2>
+    <h3>
+      该属性指定了一个绝对定位的盒的上外边距边界离盒的包含块的上边界(内边距边框)有多远。
+    </h3>
+    <div class="absolute-parent box blue">
+      <div class="absolute box grey"></div>
+    </div>
+    <h2>float</h2>
+    <div class="margin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores
+      <img src="./../bg2.png" alt="" class="float" />
+      obcaecati, distinctio similique fuga tenetur, rem deserunt enim rerum eius
+      voluptas?
+    </div>
+    <div class="margin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores obcaecati,
+      distinctio similique fuga tenetur, rem deserunt enim rerum eius voluptas?
+    </div>
+    <h2>float负外边距</h2>
+    <div class="margin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores
+      <img src="./../bg2.png" alt="" class="float float-margin" />
+      obcaecati, distinctio similique fuga tenetur, rem deserunt enim rerum eius
+      voluptas?
+    </div>
+    <div class="margin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores obcaecati,
+      distinctio similique fuga tenetur, rem deserunt enim rerum eius voluptas?
+    </div>
+    <h2>float负外边距,且清除浮动</h2>
+    <div class="margin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores
+      <img src="./../bg2.png" alt="" class="float float-margin" />
+      obcaecati, distinctio similique fuga tenetur, rem deserunt enim rerum eius
+      voluptas?
+    </div>
+    <div class="margin clear">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor,
+      quas similique suscipit delectus minus. Id, et! Id dolores obcaecati,
+      distinctio similique fuga tenetur, rem deserunt enim rerum eius voluptas?
+    </div>
+  </body>
+</html>
