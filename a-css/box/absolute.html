@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绝对非替换元素的宽度、高度</title>
+</head>
+
+<body>
+    <h2>width/left/right都不是auto，margin-left/margin-right是auto</h2>
+    <div>
+        我是父元素
+        <div style="position:absolute;width: 100px;left: 0;right: 0;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
+        <div style="position:absolute;width: 100px;left: 0;right: 20px;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
+    </div>
+    <h2>----</h2>
+    <div>
+        我是父元素
+        <div style="position:absolute;width: 100px;left: 0;right: 20px;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
+
+    </div>
+</body>
+
+</html>
