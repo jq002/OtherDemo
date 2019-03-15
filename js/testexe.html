@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a id='test' >lwpcRemote</a>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script >
+    $('#test').on('click',function(){
+        // window.location.href="lwpcRemote://78-45-C4-1A-1D-A2"
+        var win=window.open("lwpcRemote22://78-45-C4-1A-1D-A2", '_top');
+        console.log(win);
+        if(!win){
+            alert('请先安装install')
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试开机</title>
+</head>
+
+<body>
+    <a href="DuPan:">DuPan-remote</a>
+    <br>
+    <a href="Remote:">remote</a>
+    <br>
+    <!-- <a id='test' href="lwpcRemote://78-45-C4-1A-1D-A2">lwpcRemote</a> -->
+    <a id='test'>lwpcRemote</a>
+    <script>
+        // 如果用户选择始终允许，下一次将不会弹出
+        var link = document.getElementById('test');
+        var timeout;
+        window.addEventListener('blur', function (e) {
+            window.clearTimeout(timeout);
+            console.log('已打开','clear-timeout');
+        })
+
+        link.addEventListener('click', function (e) {
+
+            timeout = window.setTimeout(function () {
+                console.log('没有注册协议','timeout');
+                // window.location = "https://myapp.net";
+                // alert('')
+            }, 1000);
+
+            window.location = "lwpcRemote://78-45-C4-1A-1D-A2";
+            e.preventDefault();
+        });
+    </script>
+    <!-- <a id='test'>lwpcRemote</a>
+    <a href="Remote://D:/workspace/Remote/Remote.exe">Remote传参</a>
+    <a href="Remote2://D:/workspace/Remote/Remote.exe">bat-Remote.exe</a>
+    <button onclick="window.open('file:///D:/workspace/Remote/Remote.exe')">
+        Launch notepad
+    </button>
+    <script >
+    document.getElementById('test').addEventListener('click',function(){
+        window.open('lwpcRemote://78-45-C4-1A-1D-A2')
+
+    })
+    </script> -->
+
+</body>
+
+</html>
