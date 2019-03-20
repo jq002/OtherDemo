@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>绝对非替换元素的宽度、高度</title>
-</head>
+    <style>
+      .not-auto {
+        position: absolute;
+        width: 100px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .not-auto2 {
+        position: absolute;
+        width: 100px;
+        left: 0;
+        right: 20px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
 
-<body>
-    <h2>width/left/right都不是auto，margin-left/margin-right是auto</h2>
-    <div>
-        我是父元素
-        <div style="position:absolute;width: 100px;left: 0;right: 0;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
-        <div style="position:absolute;width: 100px;left: 0;right: 20px;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
+  <body>
+    <h2>width是auto;left/right都不是auto</h2>
+    <div style="padding:20px 100px;position: relative;width: 200px;">
+    <div style="position:absolute;left:0;right:0;">宽度如何?</div>
     </div>
-    <h2>----</h2>
+    <h2>width/left/right都不是auto</h2>
+    <h4>margin-left/margin-right是auto</h4>
     <div>
-        我是父元素
-        <div style="position:absolute;width: 100px;left: 0;right: 20px;margin: 0 auto;background: rgba(0, 0, 0, 0.5);">absolute</div>
-
+      我是父元素
+      <div class="not-auto">absolute</div>
+      <div class="not-auto2">absolute</div>
+      <img src="./icon.png" alt="" srcset="" style="position:absolute;left: 0;margin: 0 auto;">
     </div>
-</body>
+    <div>
+      过渡限制
+      <div style="position:absolute;left:500px;width:200px;right:100px;">
+        hhh
+      </div>
+    </div>
 
+    <h2>left'，'width'和'right'全都是'auto'</h2>
+    <h4>先把所有的值为'auto'的'margin-left'和'margin-right'设置为0。</h4>
+    <h4>direction'属性为'ltr'，把'left'设置为静态位置并应用下面的第3条规则;</h4>
+    <h4>
+      如果'width'和'right'都是'auto'，'left'不是'auto'，则宽度自适应，再求出'right'
+    </h4>
+    <h4>left的静态位置,即是常规流中的位置</h4>
+
+    <h3>使用首选宽度,包裹性</h3>
+    <div>父元素<span style="position:absolute;">absolute</span></div>
+
+    <h3>使用首选最小宽度;可用宽度不过够</h3>
+    <h4>由于浮动,内容在最右边;left的静态位置是一个很大得值</h4>
+
+    <!-- <div style="float:right;">父元素float<span style="position:absolute;margin: 0 auto;">绝对定位</span></div> -->
+
+    <h3>使用可用宽度</h3>
+    <div style="width:180px;position: relative;">
+      <div style="position: absolute;">
+        <img src="./../img.png" alt="" />
+        <img src="./../img.png" alt="" />
+      </div>
+    </div>
+  </body>
 </html>

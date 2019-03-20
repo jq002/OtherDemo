@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>absolute小技巧</title>
+    <style>
+      .icon-x {
+        line-height: 20px;
+      }
+      .icon-warn {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(icon.png) no-repeat center;
+      }
+      .icon-x-2 {
+        line-height: 20px;
+        padding-left: 20px;
+      }
+      .icon-warn-2 {
+        /* display: inline-block; */
+        position: absolute;
+        margin-left: -20px;
+        width: 20px;
+        height: 20px;
+        background: url(icon.png) no-repeat center;
+      }
+      .placeholder,.test{
+          line-height: normal;
+          /* height: 45px; */
+          border: 1px solid #dddddd;
+          width: 100px;
+      }
+      .placeholder{
+          position: absolute;
+          border-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align:center;border:1px solid;">
+      <span class="icon-x"> <i class="icon-warn"></i>x文物文化 </span>
+    </div>
+    <div style="text-align:center;border:1px solid;">
+      <span class="icon-x-2"> <i class="icon-warn-2"></i>x文物文化 </span>
+    </div>
+    <h2>输入框</h2>
+    <div>
+        <label for="text" class="placeholder">占位符</label>
+        <input type="text" id="test">
+    </div>
+  </body>
+</html>
