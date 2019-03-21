@@ -12,6 +12,8 @@
     <a href="DuPan:">DuPan-remote</a>
     <br>
     <a href="Remote:">remote</a>
+    <a href="lwpcRemote:">lwpcremote</a>
+
     <br>
     <!-- <a id='test' href="lwpcRemote://78-45-C4-1A-1D-A2">lwpcRemote</a> -->
     <a id='test'>lwpcRemote</a>
@@ -19,35 +21,58 @@
         // 如果用户选择始终允许，下一次将不会弹出
         var link = document.getElementById('test');
         var timeout;
-        window.addEventListener('blur', function (e) {
-            window.clearTimeout(timeout);
-            console.log('已打开','clear-timeout');
-        })
+        // window.addEventListener('blur', function (e) {
+        //     window.clearTimeout(timeout);
+        //     console.log('已打开','clear-timeout');
+        // })
 
         link.addEventListener('click', function (e) {
 
-            timeout = window.setTimeout(function () {
-                console.log('没有注册协议','timeout');
-                // window.location = "https://myapp.net";
-                // alert('')
-            }, 1000);
+            // timeout = window.setTimeout(function () {
+            //     console.log('没有注册协议','timeout');
+            //     // window.location = "https://myapp.net";
+            //     // alert('')
+            // }, 1000);
 
-            window.location = "lwpcRemote://78-45-C4-1A-1D-A2";
-            e.preventDefault();
+            // var win= window.open("lwpcRemote22://78-45-C4-1A-1D-A2", '_top')//window.location = "lwpcRemote://78-45-C4-1A-1D-A2";
+            // console.log(win);
+            // e.preventDefault();
+            loadXMLDoc(url)
+
         });
-    </script>
-    <!-- <a id='test'>lwpcRemote</a>
-    <a href="Remote://D:/workspace/Remote/Remote.exe">Remote传参</a>
-    <a href="Remote2://D:/workspace/Remote/Remote.exe">bat-Remote.exe</a>
-    <button onclick="window.open('file:///D:/workspace/Remote/Remote.exe')">
-        Launch notepad
-    </button>
-    <script >
-    document.getElementById('test').addEventListener('click',function(){
-        window.open('lwpcRemote://78-45-C4-1A-1D-A2')
+        var url = "http://127.0.0.1:4467/starup?maclist=78-45-C4-1A-1D-A2_78-45-C4-1A-1D-A3";
+        var xmlhttp;
 
-    })
-    </script> -->
+        function loadXMLDoc(url) {
+            xmlhttp = null;
+            if (window.XMLHttpRequest) { // code for all new browsers
+                xmlhttp = new XMLHttpRequest();
+            } else if (window.ActiveXObject) { // code for IE5 and IE6
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            if (xmlhttp != null) {
+                xmlhttp.onreadystatechange = state_Change;
+                xmlhttp.open("GET", url, true);
+                // xmlhttp.withCredentials = true;
+                xmlhttp.send(null);
+            } else {
+                alert("Your browser does not support XMLHTTP.");
+            }
+        }
+
+        function state_Change() {
+            if (xmlhttp.readyState == 4) { // 4 = "loaded"
+                if (xmlhttp.status == 200) { // 200 = OK
+                    // ...our code here...
+                    console.log('ok-----------' + xmlhttp.statusText)
+                } else {
+                    console.log(xmlhttp)
+                    console.log("Problem retrieving XML data:" + xmlhttp.statusText);
+                }
+            }
+        }
+    </script>
+
 
 </body>
 
