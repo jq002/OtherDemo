@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chrome 浏览器表单自动填充默认样式 - autofill</title>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            /* -webkit-box-shadow: 0 0 0px 1000px white inset; 不能设置透明色*/
+            /* delay时间设置的长一些，即可 */
+            transition: background-color 0s 10s ease-in-out; 
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        input {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="username">username:</label> <input type="number" name="username">
+        <label for="password">password:</label> <input type="text" name="password">
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
