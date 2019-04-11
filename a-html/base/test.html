@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html 基础知识</title>
+    <style>
+    .content{
+        caret-color: red;
+    }
+    </style>
+</head>
+<body>
+    <h2>全局属性 accesskey</h2>
+    <div>
+        <a href="https://www.zhixike.com" accesskey="z">智习客</a>
+    </div>
+
+    <h2>contenteditable是一个枚举属性，而非布尔属性</h2>
+    <div contenteditable="true" class="content">
+        可编辑属性
+    </div>
+    <h2>data-*</h2>
+    <div class="my" data-name="jq" data-first-name="jiang" data-id="asdhsdwe">jiang qin</div>
+
+    <h2>HMTL元素嵌套问题</h2>
+    <a href="https://www.zhixike.com" style="background:aqua;">
+    <h2>zhixike </h2>
+    <p>智习客</p>
+    </a>
+
+    <br>
+    <button>button <a href="">a标签</a></button>
+
+    
+    <script>
+    // document.designMode ='on';
+    </script>
+</body>
+</html>
