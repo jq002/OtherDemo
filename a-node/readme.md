@@ -26,6 +26,20 @@ immediate1_then
 immediate2_then
 ```
 loop1在浏览器上运行不同
+```
+<!-- nodejs -->
+golb1
+glob1_promise
+glob2_promise
+glob1_then
+glob2_then
+timeout1
+timeout1_promise
+timeout2
+timeout2_promise
+timeout1_then
+timeout2_then
+```
 
 ```
 golb1
