@@ -8,18 +8,14 @@
 </head>
 <body>
     <h1>third</h1>
-    <button onclick="toChild()">toChild</button>
+    <button onclick="toParent()">toParent</button>
 </body>
 <script>
-    function toChild(){
-        window.top.frames[0].postMessage('third iframe','http://172.168.40.22:8000');
-        console.log(window.innerWidth)
-
-        console.log(window.top.innerWidth)
+    function toParent(){
+        window.parent.postMessage('child toParent','*');
     }
     window.addEventListener('message',function(e){
-        console.log('third')
-        console.log(e)
+        console.log('child',e)
     })
 </script>
 </html>

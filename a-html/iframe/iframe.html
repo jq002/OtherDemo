@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iframe学习</title>
+</head>
+
+<body>
+    <h2>同源</h2>
+    <iframe src="../testios.html" id="iframe1"></iframe>
+    <h2>不同源</h2>
+    <iframe src="http://127.0.0.1:8097/index/readme.html" frameborder="0" id="iframe2"></iframe>
+    <script>
+        console.log(document.getElementById("iframe1").contentWindow.document)
+        console.log(document.getElementById("iframe2").contentWindow.document)
+    </script>
+
+</body>
+
+</html>

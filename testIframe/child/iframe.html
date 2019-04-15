@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <button onclick="toParent()">toParent</button>
+    <h2>跨域窗口通信</h2>
+    <h3>通过URL的#</h3>
+    <p class="from"></p>
+    <button onclick="toParentHash()">toParent:#</button>
+    <br>
+    <button onclick="openIframe()">openIframe</button>
+    <p class="name"></p>
+    <div class="parent"></div>
+    <!-- <button onclick="toParent()">toParent</button> -->
 </body>
 <script>
-    function toParent(){
-        window.parent.postMessage('child iframe','*');
+    // 通过URL的#，
+    window.onhashchange = checkMessage;
+    function checkMessage() {
+        var message = window.location.hash;
+        document.querySelector('.from').innerHTML=message;
     }
-    window.addEventListener('message',function(e){
-        console.log('child')
-        console.log(e)
-    })
+    // 跨文档通信
+    function toParentHash(){
+        var data='fromChildHash'+Math.random();
+        console.log(window.parent.location)
+        window.parent.location.href='http://172.168.40.22:8080/index.html'+'#'+data;
+    }
+
+    function setWindowName(){
+        window.name='fromWindowName'+Math.random();
+        console.log('name',window.name)
+    }
+
+    // function openIframe(){
+    //     document.createDocumentFragment
+    //     document.querySelector('.parent').append('<iframe src="http://172.168.40.22:8080/name.html" frameborder="0" ></iframe>')
+    // }
+
+
 </script>
+
 </html>
