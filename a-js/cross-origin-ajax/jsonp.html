@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSONP </title>
+</head>
+
+<body>
+    <h2>JSONP实现浏览器与服务端跨源通信</h2>
+    <script>
+    var obj={"status":"OK","content":{"total":30,"name":"jq"}}
+    </script>
+
+    <script>
+        function addScriptTag(src) {
+            var script = document.createElement('script');
+            script.setAttribute("type", "text/javascript");
+            script.src = src;
+            document.body.appendChild(script);
+        }
+
+        window.onload = function () {
+            addScriptTag('http://127.0.0.1:8000/demo-web/demo/getPageList');
+        }
+
+        function foo(data) {
+            console.log(data)
+            console.log('Your public IP address is: ' + data.status);
+        };
+    </script>
+
+</body>
+
+</html>
