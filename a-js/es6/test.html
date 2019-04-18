@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test Promise</title>
+</head>
+
+<body>
+
+    <!-- <script src="./promise2.js"></script> -->
+    <!-- <script>
+        let promise1 = new Promise(function (resolve) {
+            resolve('promise1');
+        })
+        promise1.then((data) => {
+            console.log(data, ' success1');
+        })
+        console.log('promise end1');
+
+        setTimeout(() => {
+            promise1.then((data) => {
+                console.log(data, ' success2');
+            })
+            console.log('promise end2');
+        }, 0)
+    </script> -->
+    <!-- <script>
+        let promise1 = new Promise(function (resolve) {
+            resolve('promise1');
+        })
+        promise1.then((data) => {
+            console.log(data, ' success1');
+            return data;
+        }).then(data => {
+            console.log(data, ' success2');
+        })
+        console.log('promise end1');
+    </script> -->
+    <!-- <script>
+        let promise1 = new Promise(function (resolve) {
+            resolve('promise1');
+        });
+
+        promise1.then((data) => {
+            console.log(data, ' success1');
+            new Promise(function (resolve) {
+                resolve('promise2');
+            }).then(data => {
+                console.log(data, ' success3');
+            });
+        }).then(data => {
+            console.log(data, ' success2');
+        })
+        console.log('promise end1');
+    </script> -->
+    <script>
+        let promise1 = new Promise(function (resolve) {
+            resolve(11);
+        })
+        promise1.then((data) => {
+            
+            return data.toLowerCase();;
+        }).then(data => {
+            console.log(data, ' success2');
+        },reject=>{
+            console.log(reject, ' reject');
+        }).then(data => {
+            console.log(data, ' success2');
+        },reject=>{
+            console.log(reject, ' reject');
+        })
+    </script>
+
+</body>
+
+</html>
