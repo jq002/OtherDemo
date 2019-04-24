@@ -1,6 +1,7 @@
 
 ### evenLoop1.js
 ```
+<!-- nodejs -->
 golb1
 glob1_promise
 glob2_promise
@@ -42,6 +43,7 @@ timeout2_then
 ```
 
 ```
+<!-- 浏览器 -->
 golb1
 VM1091:33 glob1_promise
 VM1091:56 glob2_promise
@@ -56,9 +58,11 @@ VM1091:45 timeout2_promise
 VM1091:48 timeout2_then
 ```
 #### loop2和loop1对比
-先执行nextTick队列后执行Promise队列，同一个事件循环与代码前后书写无关
+node.js先执行同一个宏任务源的任务队列的所有任务，再执行微任务。（浏览器不是的）
+
+先执行nextTick队列后执行Promise队列，同一个事件循环与代码前后书写无关。
 
 
 - [x] [深入浅出Javascript事件循环机制(上)](https://zhuanlan.zhihu.com/p/26229293)
 - [x] [前端基础进阶（十二）：深入核心，详解事件循环机制](https://www.jianshu.com/p/12b9f73c5a4f)
-- [ ] [Javascript事件循环机制以及渲染引擎何时渲染UI](https://segmentfault.com/a/1190000013212944)
+- [x] [Javascript事件循环机制以及渲染引擎何时渲染UI](https://segmentfault.com/a/1190000013212944)
