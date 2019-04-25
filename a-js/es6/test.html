@@ -10,7 +10,7 @@
 
 <body>
 
-    <!-- <script src="./promise2.js"></script> -->
+    <script src="./promise2.js"></script>
     <!-- <script>
         let promise1 = new Promise(function (resolve) {
             resolve('promise1');
@@ -56,7 +56,7 @@
         })
         console.log('promise end1');
     </script> -->
-    <script>
+    <!-- <script>
         let promise1 = new Promise(function (resolve) {
             resolve(11);
         })
@@ -72,8 +72,24 @@
         },reject=>{
             console.log(reject, ' reject');
         })
+    </script> -->
+    <script>
+        var p3 = new Promise(function (resolve, reject) {
+            resolve("B");
+        });
+        var p1 = new Promise(function (resolve, reject) {
+            resolve(p3);
+        });
+        var p2 = new Promise(function (resolve, reject) {
+            resolve("A");
+        });
+        p1.then(function (v) {
+            console.log(v);
+        });
+        p2.then(function (v) {
+            console.log(v);
+        });
     </script>
-
 </body>
 
 </html>
